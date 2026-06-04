@@ -22,8 +22,8 @@
   --muted:#5a7a7a;
   --border:rgba(201,168,76,.18);
 }
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+html{scroll-behavior:smooth; overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden!important}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--dark)}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
@@ -32,7 +32,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .nav{position:fixed;top:0;width:100%;z-index:9999;transition:all .4s ease}
 .nav.scrolled{background:rgba(10,30,30,.97);backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(201,168,76,.15)}
 .nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:78px}
-.nav-logo img{height:48px;object-fit:contain;transition:transform 0.3s}
+.nav-logo img{height:48px;object-fit:contain;transition:transform 0.3s; border-radius: 2px;}
 .nav-logo:hover img{transform:scale(1.04)}
 .nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
 .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;position:relative;padding:4px 0}
@@ -239,8 +239,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .test-role{font-size:.78rem;color:var(--muted);margin-top:.15rem;display:block}
 
 /* ========== GROW / CTA ========== */
-.grow-sec{background:var(--dark);padding:140px 0;position:relative;overflow:hidden}
-.grow-bg-1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);top:-200px;right:-200px;pointer-events:none}
+.grow-sec{background:var(--white);padding:140px 0;position:relative;overflow:hidden}
+.grow-bg-1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201, 168, 76, 0.199) 0%,transparent 65%);top:-200px;right:-200px;pointer-events:none}
 .grow-bg-2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(26,82,82,.4) 0%,transparent 70%);bottom:-100px;left:-100px;pointer-events:none}
 .grow-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .grow-inner{max-width:1220px;margin:0 auto;padding:0 5%;position:relative;z-index:1}
@@ -248,27 +248,27 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .grow-label{display:inline-flex;align-items:center;gap:.7rem;border:1px solid rgba(201,168,76,.25);padding:.4rem 1rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-radius:2px;margin-bottom:2rem}
 .grow h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:600;color:var(--white);line-height:1.1;margin-bottom:1.5rem}
 .grow h2 .accent{color:var(--gold-2)}
-.grow-desc{font-size:1rem;color:rgba(255,255,255,.55);line-height:2;margin-bottom:2.5rem}
+.grow-desc{font-size:1rem;color:rgba(0, 0, 0, 0.55);line-height:2;margin-bottom:2.5rem}
 .grow-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-grow{display:inline-flex;align-items:center;gap:.7rem;background:var(--gold);color:var(--teal);padding:1rem 2.2rem;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;text-decoration:none;transition:all .3s}
 .btn-grow:hover{background:var(--gold-2);transform:translateY(-3px);box-shadow:0 15px 40px rgba(201,168,76,.2)}
 .btn-grow-outline{display:inline-flex;align-items:center;gap:.7rem;background:transparent;color:rgba(255,255,255,.7);padding:1rem 2.2rem;font-weight:500;font-size:.9rem;letter-spacing:.05em;border:1px solid rgba(255,255,255,.15);border-radius:2px;text-decoration:none;transition:all .3s}
 .btn-grow-outline:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-3px)}
 .grow-right{display:flex;flex-direction:column;gap:1.5rem}
-.grow-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:all .4s;position:relative;overflow:hidden}
+.grow-card{background: var(--cream);border:1px solid rgba(255,255,255,.06);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:all .4s;position:relative;overflow:hidden}
 .grow-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .4s ease}
-.grow-card:hover{background:rgba(255,255,255,.07);transform:translateX(6px)}
+.grow-card:hover{background:rgba(255, 255, 255, 0.474);transform:translateX(6px)}
 .grow-card:hover::before{transform:scaleY(1)}
 .grow-card-ico{width:44px;height:44px;min-width:44px;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.grow-card h4{font-size:.95rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:.4rem}
-.grow-card p{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7}
+.grow-card h4{font-size:.95rem;font-weight:600;color:rgba(0, 0, 0, 0.85);margin-bottom:.4rem}
+.grow-card p{font-size:.82rem;color:rgba(0, 0, 0, 0.45);line-height:1.7}
 .grow-divider{height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.2),transparent);margin-bottom:5rem}
-.grow-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,.08)}
+.grow-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201, 168, 76, 0.137)}
 .contact-tile{background:rgba(255,255,255,.03);padding:2.5rem;text-align:center;transition:background .3s;border:1px solid rgba(255,255,255,.04)}
 .contact-tile:hover{background:rgba(255,255,255,.07)}
 .contact-tile-ico{font-size:1.8rem;margin-bottom:1.2rem;display:block}
-.contact-tile h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-3);margin-bottom:.6rem;font-weight:600}
-.contact-tile a,.contact-tile p{font-size:.85rem;color:rgba(255,255,255,.5);text-decoration:none;line-height:1.7;display:block}
+.contact-tile h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--black);margin-bottom:.6rem;font-weight:600}
+.contact-tile a,.contact-tile p{font-size:.85rem;color:var(--title);text-decoration:none;line-height:1.7;display:block}
 .contact-tile a:hover{color:var(--gold-2)}
 
 /* ========== FOOTER ========== */
@@ -276,7 +276,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .footer-brand{}
-.footer-logo{height:52px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85;margin-bottom:1.5rem}
+.footer-logo{height:52px;object-fit:contain;margin-bottom:1.5rem; border-radius: 2px;}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.35);line-height:1.8;max-width:280px;margin-bottom:2rem}
 .footer-socials{display:flex;gap:.7rem}
 .social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .3s;border-radius:2px}
@@ -570,7 +570,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand" data-reveal="up">
-        <img src="data:image/jpeg;base64,__LOGO__" alt="Dispatch Desk" class="footer-logo">
+        <img src="IMG-20260604-WA0002.jpg" alt="Dispatch Desk" class="footer-logo">
         <p class="footer-tagline">"We Answer. We Dispatch. You Grow." — Premium dispatch and customer support services trusted by 500+ businesses globally.</p>
         <div class="footer-socials">
           <a href="#" class="social-link">in</a>
