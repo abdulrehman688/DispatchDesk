@@ -31,14 +31,14 @@
   --transition:  0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: hidden!important; }
 
 body {
   font-family: 'Inter', sans-serif;
   background: var(--cream);
   color: var(--text);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 }
 
 /* ─── Container ─── */
