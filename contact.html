@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us  Dispatch Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#0d3535;
+  --teal-2:#1a5252;
+  --teal-3:#246060;
+  --gold:#c9a84c;
+  --gold-2:#e2c06b;
+  --gold-3:#f0d898;
+  --gold-pale:rgba(201,168,76,.12);
+  --cream:#f8f4ee;
+  --white:#ffffff;
+  --dark:#040c0c;
+  --text:#1e3535;
+  --muted:#5a7a7a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ========== NAV ========== */
+.nav{position:fixed;top:0;width:100%;z-index:9999;transition:all .4s ease}
+.nav.scrolled{background:rgba(10,30,30,.97);backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(201,168,76,.15)}
+.nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav-logo img{height:48px;object-fit:contain;transition:transform .3s}
+.nav-logo:hover img{transform:scale(1.04)}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold-2);transition:width .35s ease}
+.nav-links a:hover{color:var(--gold-2)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--gold-2)}
+.nav-cta-btn{background:var(--gold)!important;color:var(--teal)!important;padding:.5rem 1.4rem!important;font-weight:600!important;border-radius:2px;transition:background .3s,transform .3s!important}
+.nav-cta-btn::after{display:none!important}
+.nav-cta-btn:hover{background:var(--gold-2)!important;transform:translateY(-2px)!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:10001}
+.nav-hamburger span{display:block;width:26px;height:2px;background:var(--white);border-radius:2px;transition:all .4s cubic-bezier(.23,1,.32,1)}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;background:var(--teal);z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:transform .55s cubic-bezier(.77,0,.175,1);pointer-events:none}
+.mobile-menu.open{transform:translateX(0);pointer-events:all}
+.mobile-menu-logo{position:absolute;top:1.5rem;left:5%;opacity:.1}
+.mobile-menu-logo img{height:60px;}
+.mobile-menu-links{list-style:none;text-align:center;width:100%}
+.mobile-menu-links li{border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+.mobile-menu-links a{display:block;padding:1.4rem 2rem;font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.05em;transition:all .35s;position:relative}
+.mobile-menu-links a::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .3s}
+.mobile-menu-links a:hover{color:var(--gold-2);padding-left:3rem}
+.mobile-menu-links a:hover::before{transform:scaleY(1)}
+.mobile-menu-links li{transform:translateX(60px);opacity:0;transition:transform .5s ease,opacity .5s ease}
+.mobile-menu.open li:nth-child(1){transform:none;opacity:1;transition-delay:.1s}
+.mobile-menu.open li:nth-child(2){transform:none;opacity:1;transition-delay:.15s}
+.mobile-menu.open li:nth-child(3){transform:none;opacity:1;transition-delay:.2s}
+.mobile-menu.open li:nth-child(4){transform:none;opacity:1;transition-delay:.25s}
+.mobile-menu.open li:nth-child(5){transform:none;opacity:1;transition-delay:.3s}
+.mobile-menu-bottom{position:absolute;bottom:3rem;text-align:center}
+.mobile-menu-bottom a{display:inline-block;background:var(--gold);color:var(--teal);padding:.9rem 2.5rem;font-weight:700;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;margin-bottom:1.2rem}
+.mobile-menu-tagline{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+
+/* ========== HERO ========== */
+.page-hero{padding:160px 5% 100px;background:var(--teal);position:relative;overflow:hidden}
+.hero-noise{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 65%);top:-200px;right:-150px;pointer-events:none;animation:glowPulse 8s ease-in-out infinite alternate}
+.hero-glow-2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(42,122,122,.15) 0%,transparent 70%);bottom:-100px;left:-50px;pointer-events:none}
+@keyframes glowPulse{0%{transform:scale(1)}100%{transform:scale(1.15)}}
+.hero-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-lines span{position:absolute;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.2),transparent);animation:lineRise 10s linear infinite}
+.hero-lines span:nth-child(1){left:10%;height:180px;animation-duration:9s}
+.hero-lines span:nth-child(2){left:28%;height:130px;animation-duration:12s;animation-delay:2s}
+.hero-lines span:nth-child(3){left:52%;height:160px;animation-duration:8s;animation-delay:4s}
+.hero-lines span:nth-child(4){left:74%;height:140px;animation-duration:11s;animation-delay:1s}
+.hero-lines span:nth-child(5){left:88%;height:200px;animation-duration:10s;animation-delay:3s}
+@keyframes lineRise{0%{top:110%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:-20%;opacity:0}}
+.hero-inner{max-width:1220px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{display:flex;align-items:center;gap:.6rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.8rem;opacity:0;animation:aUp .7s ease .2s forwards}
+.breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .3s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:var(--gold)}
+.hero-tag{display:inline-flex;align-items:center;gap:.7rem;border:1px solid rgba(201,168,76,.3);padding:.4rem 1rem;border-radius:2px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-3);margin-bottom:1.5rem;opacity:0;animation:aUp .7s ease .3s forwards}
+.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:600;color:var(--white);line-height:1.08;margin-bottom:1.5rem;opacity:0;animation:aUp .9s ease .4s forwards}
+.page-hero h1 .gold{color:var(--gold-2)}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:2;max-width:580px;opacity:0;animation:aUp .9s ease .6s forwards}
+.hero-contact-pills{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;opacity:0;animation:aUp .9s ease .8s forwards}
+.contact-pill{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:.55rem 1.2rem;font-size:.8rem;color:rgba(255,255,255,.7);border-radius:2px;text-decoration:none;transition:all .3s}
+.contact-pill:hover{background:var(--gold);border-color:var(--gold);color:var(--teal);font-weight:600}
+.contact-pill-icon{font-size:1rem}
+@keyframes aUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ========== REVEAL ========== */
+[data-reveal]{opacity:0;transition:opacity .85s ease,transform .85s ease}
+[data-reveal="up"]{transform:translateY(50px)}
+[data-reveal="left"]{transform:translateX(-50px)}
+[data-reveal="right"]{transform:translateX(50px)}
+[data-reveal="scale"]{transform:scale(.94)}
+[data-reveal].is-visible{opacity:1;transform:none}
+
+/* ========== SECTION UTILS ========== */
+.sec{padding:110px 0}
+.sec-inner{max-width:1220px;margin:0 auto;padding:0 5%}
+.tag{display:inline-flex;align-items:center;gap:.8rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem}
+.tag::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:600;color:var(--teal);line-height:1.15;margin-bottom:1.2rem}
+.h2-white{color:var(--white)}
+.lead{font-size:1rem;color:var(--muted);line-height:1.9;max-width:560px}
+.divider{width:48px;height:2px;background:linear-gradient(to right,var(--gold),transparent);margin:1.4rem 0}
+
+/* ========== CONTACT MAIN SECTION ========== */
+.contact-sec{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:0;margin-top:4rem;background:rgba(0,0,0,.04)}
+.contact-info{background:var(--teal);padding:4rem;display:flex;flex-direction:column;gap:0}
+.contact-info-top{margin-bottom:3rem}
+.contact-info-top .tag{color:var(--gold-2)}
+.contact-info-top .tag::before{background:var(--gold-2)}
+.contact-info-top h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:1rem}
+.contact-info-top p{font-size:.92rem;color:rgba(255,255,255,.55);line-height:1.9}
+.contact-items{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.06);margin-bottom:2.5rem}
+.contact-item{background:rgba(255,255,255,.03);padding:1.5rem 1.8rem;display:flex;align-items:flex-start;gap:1.2rem;transition:background .3s;border-left:2px solid transparent}
+.contact-item:hover{background:rgba(255,255,255,.07);border-left-color:var(--gold)}
+.contact-item-icon{width:40px;height:40px;min-width:40px;background:rgba(201,168,76,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:background .3s}
+.contact-item:hover .contact-item-icon{background:var(--gold)}
+.contact-item-body h4{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.contact-item-body a,.contact-item-body p{font-size:.95rem;color:rgba(255,255,255,.85);text-decoration:none;display:block;line-height:1.6;transition:color .3s}
+.contact-item-body a:hover{color:var(--gold-2)}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06)}
+.hours-cell{background:rgba(255,255,255,.03);padding:1.2rem 1.5rem}
+.hours-cell h5{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.7);font-weight:600;margin-bottom:.4rem}
+.hours-cell p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.6}
+.social-row{display:flex;gap:.6rem;margin-top:2.5rem}
+.social-btn{width:38px;height:38px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.72rem;font-weight:700;text-decoration:none;transition:all .3s;border-radius:2px}
+.social-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
+
+/* ========== FORM ========== */
+.contact-form-wrap{background:var(--cream);padding:4rem}
+.form-header{margin-bottom:2.5rem}
+.form-header .tag{color:var(--gold)}
+.form-header h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--teal);margin-bottom:.8rem}
+.form-header p{font-size:.9rem;color:var(--muted);line-height:1.7}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.form-group{display:flex;flex-direction:column;gap:.5rem}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--white);border:1px solid rgba(13,53,53,.12);padding:.9rem 1.1rem;font-family:'DM Sans',sans-serif;font-size:.92rem;color:var(--text);outline:none;transition:all .35s;border-radius:0;appearance:none;-webkit-appearance:none}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230d3535' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.1)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(90,122,122,.5)}
+.form-group textarea{min-height:140px;resize:vertical;line-height:1.7}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.4rem}
+.form-submit-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}
+.btn-submit{display:inline-flex;align-items:center;gap:.7rem;background:var(--teal);color:var(--white);padding:1rem 2.2rem;font-weight:600;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:all .35s;position:relative;overflow:hidden;font-family:'DM Sans',sans-serif}
+.btn-submit::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform .4s ease;z-index:0}
+.btn-submit:hover{color:var(--teal)}
+.btn-submit:hover::before{transform:translateX(0)}
+.btn-submit span,.btn-submit svg{position:relative;z-index:1;transition:transform .35s}
+.btn-submit:hover .btn-arrow{transform:translateX(5px)}
+.form-privacy{font-size:.77rem;color:var(--muted);line-height:1.6}
+.form-privacy a{color:var(--gold);text-decoration:none}
+.form-privacy a:hover{text-decoration:underline}
+
+/* Success state */
+.form-success{display:none;text-align:center;padding:3rem 2rem}
+.form-success-icon{font-size:3rem;margin-bottom:1.2rem;display:block}
+.form-success h4{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--teal);margin-bottom:.8rem;font-weight:600}
+.form-success p{font-size:.92rem;color:var(--muted);line-height:1.8}
+
+/* ========== MAP SECTION ========== */
+.map-sec{background:var(--cream);padding:110px 0}
+.map-inner{max-width:1220px;margin:0 auto;padding:0 5%}
+.map-header{text-align:center;max-width:600px;margin:0 auto 3.5rem;data-reveal:up}
+.map-container{position:relative;height:480px;background:var(--teal);overflow:hidden}
+.map-container iframe{width:100%;height:100%;border:none;filter:grayscale(30%) contrast(1.1)}
+.map-overlay-tag{position:absolute;top:1.5rem;left:1.5rem;background:var(--teal);color:var(--gold-2);padding:.5rem 1.2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;z-index:1;font-family:'DM Sans',sans-serif}
+.map-corner{position:absolute;bottom:1.5rem;right:1.5rem;width:40px;height:40px;border-bottom:3px solid var(--gold);border-right:3px solid var(--gold);z-index:1;pointer-events:none}
+
+/* ========== FAQ ========== */
+.faq-sec{background:var(--white)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(0,0,0,.05);margin-top:4rem}
+.faq-item{background:var(--white);padding:2.5rem;transition:background .3s;border-left:2px solid transparent;cursor:pointer}
+.faq-item:hover,.faq-item.open{background:var(--cream);border-left-color:var(--gold)}
+.faq-q{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.faq-q h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--teal);line-height:1.4}
+.faq-toggle{width:28px;height:28px;min-width:28px;border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);transition:all .35s;flex-shrink:0;margin-top:2px}
+.faq-item.open .faq-toggle{background:var(--gold);color:var(--teal);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s ease,margin .4s ease;opacity:0;margin-top:0}
+.faq-item.open .faq-a{max-height:200px;opacity:1;margin-top:1.2rem}
+.faq-a p{font-size:.9rem;color:var(--muted);line-height:1.85}
+
+/* ========== CTA STRIP ========== */
+.cta-strip{background:var(--dark);padding:100px 0;position:relative;overflow:hidden}
+.cta-strip-bg{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none}
+.cta-strip-bg-2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(26,82,82,.3) 0%,transparent 70%);bottom:-100px;left:-50px;pointer-events:none}
+.cta-strip-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.cta-strip-inner{max-width:1220px;margin:0 auto;padding:0 5%;text-align:center;position:relative;z-index:1}
+.cta-strip-inner .tag::before{background:var(--gold-2)}
+.cta-strip-inner .tag{color:var(--gold-2);justify-content:center}
+.cta-strip-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:600;color:var(--white);line-height:1.1;margin-bottom:1.5rem}
+.cta-strip-inner h2 em{font-style:normal;color:var(--gold-2)}
+.cta-strip-inner p{font-size:.98rem;color:rgba(255,255,255,.5);line-height:2;max-width:520px;margin:0 auto 3rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:.7rem;background:var(--gold);color:var(--teal);padding:1rem 2.4rem;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;text-decoration:none;transition:all .3s}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-3px);box-shadow:0 15px 40px rgba(201,168,76,.2)}
+.btn-outline-w{display:inline-flex;align-items:center;gap:.7rem;background:transparent;color:rgba(255,255,255,.65);padding:1rem 2.4rem;font-weight:500;font-size:.9rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;text-decoration:none;transition:all .3s}
+.btn-outline-w:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-3px)}
+
+/* ========== FOOTER ========== */
+.footer{background:#040c0c;padding:80px 0 0}
+.footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-logo{height:50px;object-fit:contain;opacity:.8;margin-bottom:1.5rem;display:block}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:rgba(255,255,255,.3);line-height:1.8;max-width:280px;margin-bottom:2rem}
+.footer-socials{display:flex;gap:.7rem}
+.social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .3s;border-radius:2px}
+.social-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
+.footer-col h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.footer-links a{font-size:.84rem;color:rgba(255,255,255,.38);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.footer-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
+.footer-links a:hover{color:rgba(255,255,255,.75);padding-left:.3rem}
+.footer-links a:hover::before{width:12px}
+.footer-bottom{padding:2rem 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.2);letter-spacing:.05em}
+.footer-badge{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.footer-bar{height:3px;background:linear-gradient(to right,var(--teal),var(--gold),var(--teal))}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1024px){
+  .contact-grid,.faq-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:3rem}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .page-hero{padding:130px 5% 70px}
+  .page-hero h1{font-size:2.8rem}
+  .contact-info,.contact-form-wrap{padding:2.5rem}
+  .form-grid{grid-template-columns:1fr}
+  .form-group.full{grid-column:1}
+  .map-container{height:320px}
+  .footer-top{grid-template-columns:1fr;gap:2.5rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .faq-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .page-hero h1{font-size:2.2rem}
+  .cta-strip-inner h2{font-size:2.2rem}
+  .cta-actions{flex-direction:column;align-items:center}
+  .hours-grid{grid-template-columns:1fr}
+  .hero-contact-pills{flex-direction:column;gap:.7rem}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-logo"><img src="logo.jpg" alt=""></div>
+  <ul class="mobile-menu-links">
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="services.html" onclick="closeMenu()">Services</a></li>
+    <li><a href="#contact-form" onclick="closeMenu()">Send Message</a></li>
+    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><a href="#map" onclick="closeMenu()">Find Us</a></li>
+  </ul>
+  <div class="mobile-menu-bottom">
+    <a href="mailto:info@dispatchdesk.com" onclick="closeMenu()">Email Us &rarr;</a>
+    <div class="mobile-menu-tagline">We Answer &bull; We Dispatch &bull; You Grow</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="logo.jpg" alt="Dispatch Desk"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#contact-form">Send Message</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:info@dispatchdesk.com" class="nav-cta-btn">Email Us</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-noise"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-lines"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>&rsaquo;</span><span>Contact</span>
+    </div>
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Get In Touch</div>
+    <h1>Let&rsquo;s <span class="gold">Start</span> a<br>Conversation</h1>
+    <p>Have a question, a project, or just want to explore how Dispatch Desk can help your business grow? Our team is ready to listen and respond  usually within 2 hours.</p>
+    <div class="hero-contact-pills">
+      <a href="mailto:info@dispatchdesk.com" class="contact-pill"><span class="contact-pill-icon">&#9993;</span> info@dispatchdesk.com</a>
+      <a href="tel:+441234567890" class="contact-pill"><span class="contact-pill-icon">&#9742;</span> +44 123 456 7890</a>
+      <div class="contact-pill"><span class="contact-pill-icon">&#9200;</span> Available 24 / 7</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT MAIN -->
+<section class="sec contact-sec" id="contact-form">
+  <div class="sec-inner">
+    <div style="text-align:center;max-width:620px;margin:0 auto" data-reveal="up">
+      <span class="tag" style="justify-content:center">Send a Message</span>
+      <h2 class="h2">We&rsquo;d Love to Hear<br>From You</h2>
+      <div class="divider" style="margin:1.4rem auto"></div>
+      <p class="lead" style="margin:0 auto">Fill in the form below and one of our specialists will get back to you within 2 hours during business hours.</p>
+    </div>
+    <div class="contact-grid" data-reveal="up">
+
+      <!-- LEFT: INFO PANEL -->
+      <div class="contact-info">
+        <div class="contact-info-top">
+          <span class="tag">Contact Details</span>
+          <h3>Always Here<br>When You Need Us</h3>
+          <p>Reach us through any of the channels below. We guarantee a response within 2 hours.</p>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">&#9993;</div>
+            <div class="contact-item-body">
+              <h4>Email Address</h4>
+              <a href="mailto:info@dispatchdesk.com">info@dispatchdesk.com</a>
+              <a href="mailto:support@dispatchdesk.com" style="opacity:.6;font-size:.85rem">support@dispatchdesk.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#9742;</div>
+            <div class="contact-item-body">
+              <h4>Phone Number</h4>
+              <a href="tel:+441234567890">+44 123 456 7890</a>
+              <p style="font-size:.82rem;opacity:.55;margin-top:.2rem">Available 24 hours, 7 days a week</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#9679;</div>
+            <div class="contact-item-body">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/441234567890">+44 123 456 7890</a>
+              <p style="font-size:.82rem;opacity:.55;margin-top:.2rem">Chat with us instantly</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">&#9873;</div>
+            <div class="contact-item-body">
+              <h4>Office Address</h4>
+              <p>123 Business Park, Suite 100<br>London, United Kingdom</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5 style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,168,76,.7);font-weight:600;margin-bottom:1rem">Business Hours</h5>
+          <div class="hours-grid">
+            <div class="hours-cell"><h5>Monday – Friday</h5><p>Available 24/7</p></div>
+            <div class="hours-cell"><h5>Saturday – Sunday</h5><p>Available 24/7</p></div>
+            <div class="hours-cell" style="grid-column:1/-1"><h5>Response Time</h5><p>Within 2 hours guaranteed</p></div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" class="social-btn">in</a>
+          <a href="#" class="social-btn">tw</a>
+          <a href="#" class="social-btn">fb</a>
+          <a href="#" class="social-btn">ig</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM PANEL -->
+      <div class="contact-form-wrap" id="formWrap">
+        <div class="form-header">
+          <span class="tag">Send a Message</span>
+          <h3>Tell Us About<br>Your Business</h3>
+          <p>Complete the form and we&rsquo;ll prepare a tailored response for your specific needs.</p>
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fname">First Name <span style="color:var(--gold)">*</span></label>
+              <input type="text" id="fname" name="fname" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name <span style="color:var(--gold)">*</span></label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span style="color:var(--gold)">*</span></label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+44 000 000 0000">
+            </div>
+            <div class="form-group full">
+              <label for="company">Company / Business Name</label>
+              <input type="text" id="company" name="company" placeholder="Your company name">
+            </div>
+            <div class="form-group full">
+              <label for="service">Service You&rsquo;re Interested In <span style="color:var(--gold)">*</span></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service&hellip;</option>
+                <option value="taxi">Taxi Booking Services</option>
+                <option value="support">Customer Support</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="webdev">Web Development</option>
+                <option value="restaurant">Restaurant Operations</option>
+                <option value="multiple">Multiple Services</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="message">Your Message <span style="color:var(--gold)">*</span></label>
+              <textarea id="message" name="message" placeholder="Tell us about your business, your current challenges, and how we can help you grow&hellip;" required></textarea>
+              <span class="form-note">Minimum 20 characters. The more detail, the better we can tailor our response.</span>
+            </div>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>Send Your Message</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <p class="form-privacy">By submitting you agree to our <a href="#">Privacy Policy</a>. We never share your data.</p>
+          </div>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <span class="form-success-icon">&#9670;</span>
+          <h4>Message Received!</h4>
+          <p>Thank you for reaching out. A member of our team will review your message and get back to you within 2 hours. We look forward to speaking with you.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-sec" id="map">
+  <div class="map-inner">
+    <div class="map-header" data-reveal="up">
+      <span class="tag" style="justify-content:center">Our Location</span>
+      <h2 class="h2" style="text-align:center">Find Us</h2>
+      <div class="divider" style="margin:1.4rem auto"></div>
+      <p class="lead" style="text-align:center;margin:0 auto">Serving clients globally. Visit our London office or reach us anytime online.</p>
+    </div>
+    <div class="map-container" data-reveal="scale">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.47340193!2d-0.24168!3d51.52855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="map-overlay-tag">&#9873; London, United Kingdom</div>
+      <div class="map-corner"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-sec" id="faq">
+  <div class="sec-inner">
+    <div style="text-align:center;max-width:600px;margin:0 auto" data-reveal="up">
+      <span class="tag" style="justify-content:center">FAQ</span>
+      <h2 class="h2">Frequently Asked<br>Questions</h2>
+      <div class="divider" style="margin:1.4rem auto"></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>How quickly will you respond to my enquiry?</h4><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><p>We guarantee a response within 2 hours during business hours. For urgent matters, we recommend calling us directly on +44 123 456 7890 where our team is available 24/7.</p></div>
+      </div>
+      <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Is there a minimum contract length?</h4><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><p>No. We offer flexible arrangements tailored to your business. We believe our service quality speaks for itself, so we don&rsquo;t lock clients into long-term contracts.</p></div>
+      </div>
+      <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Do you offer a free consultation?</h4><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><p>Absolutely. Every new client starts with a free, no-obligation consultation where we assess your needs and recommend the services that will make the biggest difference.</p></div>
+      </div>
+      <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Which dispatch platforms do you support?</h4><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><p>We are certified across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and Data Master  the six leading platforms in the industry. If you use a different system, contact us to discuss.</p></div>
+      </div>
+      <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Can I use multiple services together?</h4><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><p>Yes  and many of our clients do. We offer bundled packages for businesses that need dispatch management alongside customer support, digital marketing or web development.</p></div>
+      </div>
+      <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>How is pricing structured?</h4><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><p>Pricing is tailored to your volume and requirements. We don&rsquo;t believe in one-size-fits-all pricing. Contact us and we&rsquo;ll prepare a custom proposal within 24 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cta-strip-bg"></div>
+  <div class="cta-strip-bg-2"></div>
+  <div class="cta-strip-grid"></div>
+  <div class="cta-strip-inner">
+    <div data-reveal="up">
+      <span class="tag">Ready to Begin</span>
+      <h2>Still Deciding? Let&rsquo;s<br><em>Talk It Through</em></h2>
+      <p>No pressure. No jargon. Just an honest conversation about your business and how we can help it grow.</p>
+      <div class="cta-actions">
+        <a href="mailto:info@dispatchdesk.com" class="btn-gold">Email Us Directly &rarr;</a>
+        <a href="tel:+441234567890" class="btn-outline-w">&#9742; Call Us Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div data-reveal="up">
+        <img src="logo.jpg" alt="Dispatch Desk" class="footer-logo">
+        <p class="footer-tagline">&ldquo;We Answer. We Dispatch. You Grow.&rdquo; Premium dispatch and customer support trusted by 500+ businesses globally.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">tw</a>
+          <a href="#" class="social-link">fb</a>
+          <a href="#" class="social-link">ig</a>
+        </div>
+      </div>
+      <div data-reveal="up">
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="services.html#taxi">Taxi Booking Services</a></li>
+          <li><a href="services.html#support">Customer Support</a></li>
+          <li><a href="services.html#marketing">Digital Marketing</a></li>
+          <li><a href="services.html#webdev">Web Development</a></li>
+          <li><a href="services.html#restaurant">Restaurant Operations</a></li>
+        </ul>
+      </div>
+      <div data-reveal="up">
+        <h5>Expertise</h5>
+        <ul class="footer-links">
+          <li><a href="#">Autocab</a></li>
+          <li><a href="#">iCabbi</a></li>
+          <li><a href="#">Cab 9</a></li>
+          <li><a href="#">Cordic</a></li>
+          <li><a href="#">Cab Treasure</a></li>
+          <li><a href="#">Data Master</a></li>
+        </ul>
+      </div>
+      <div data-reveal="up">
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="index.html#why-us">Why Choose Us</a></li>
+          <li><a href="index.html#testimonials">Client Stories</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div style="margin-top:2rem">
+          <h5>Contact</h5>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.3);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Dispatch Desk. All rights reserved.</span>
+      <span class="footer-badge">We Answer &bull; We Dispatch &bull; You Grow</span>
+    </div>
+  </div>
+  <div class="footer-bar"></div>
+</footer>
+
+<script>
+(function(){
+  /* NAV */
+  var nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  },{passive:true});
+
+  /* HAMBURGER */
+  var hamburger=document.getElementById('hamburger');
+  var mobileMenu=document.getElementById('mobileMenu');
+  var menuOpen=false;
+  window.toggleMenu=function(){
+    menuOpen=!menuOpen;
+    hamburger.classList.toggle('open',menuOpen);
+    mobileMenu.classList.toggle('open',menuOpen);
+    document.body.style.overflow=menuOpen?'hidden':'';
+  };
+  window.closeMenu=function(){
+    menuOpen=false;
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow='';
+  };
+
+  /* SCROLL REVEAL */
+  var reveals=document.querySelectorAll('[data-reveal]');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var siblings=Array.from(e.target.parentElement.querySelectorAll('[data-reveal]'));
+        var idx=siblings.indexOf(e.target);
+        setTimeout(function(){ e.target.classList.add('is-visible'); },idx*100);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  reveals.forEach(function(el){ io.observe(el); });
+
+  /* SMOOTH SCROLL */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var href=a.getAttribute('href');
+      if(href==='#') return;
+      e.preventDefault();
+      var target=document.querySelector(href);
+      if(target){
+        var top=target.getBoundingClientRect().top+window.scrollY-70;
+        window.scrollTo({top:top,behavior:'smooth'});
+      }
+    });
+  });
+
+  /* FAQ TOGGLE */
+  window.toggleFaq=function(item){
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+    if(!isOpen) item.classList.add('open');
+  };
+
+  /* FORM SUBMIT */
+  var form=document.getElementById('contactForm');
+  var success=document.getElementById('formSuccess');
+  var btn=document.getElementById('submitBtn');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var valid=true;
+      form.querySelectorAll('[required]').forEach(function(field){
+        if(!field.value.trim()){ valid=false; field.style.borderColor='#e05555'; }
+        else { field.style.borderColor=''; }
+      });
+      if(!valid) return;
+      btn.disabled=true;
+      btn.querySelector('span').textContent='Sending\u2026';
+      setTimeout(function(){
+        form.style.display='none';
+        success.style.display='block';
+      },1200);
+    });
+    form.querySelectorAll('input,textarea,select').forEach(function(field){
+      field.addEventListener('focus',function(){ this.style.borderColor=''; });
+    });
+  }
+})();
+</script>
+</body>
+</html>
