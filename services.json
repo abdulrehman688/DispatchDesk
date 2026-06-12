@@ -1,0 +1,279 @@
+{
+  "services": [
+    {
+      "id": "taxi-booking",
+      "number": "01",
+      "icon": "\ud83d\ude96",
+      "image": "https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=800&q=80",
+      "title": "Taxi Booking Services",
+      "subtitle": "Dispatch Management",
+      "tagline": "Never miss a fare again",
+      "shortDescription": "Professional 24/7 taxi booking and dispatch management for private hire companies across all major platforms.",
+      "fullDescription": "We provide professional, round-the-clock taxi booking and dispatch management for private hire and taxi companies. Our trained operators work directly within your chosen platform, handling every call, booking, and dispatch with speed and precision \u2014 so you never miss a fare.",
+      "stats": [
+        {
+          "value": "24/7",
+          "label": "Live Dispatch"
+        },
+        {
+          "value": "6",
+          "label": "Platforms"
+        }
+      ],
+      "platforms": [
+        "Autocab",
+        "iCabbi",
+        "Cab 9",
+        "Cordic",
+        "Cab Treasure",
+        "Data Master"
+      ],
+      "benefits": [
+        {
+          "title": "Zero Missed Bookings",
+          "description": "Every incoming call answered promptly, every booking captured and dispatched correctly"
+        },
+        {
+          "title": "24/7 Live Operator Coverage",
+          "description": "Real human agents available around the clock \u2014 nights, weekends and holidays included"
+        },
+        {
+          "title": "Multi-Platform Certified",
+          "description": "Expert operators across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and Data Master"
+        },
+        {
+          "title": "Driver Coordination",
+          "description": "Efficient allocation and real-time communication with your driver fleet"
+        },
+        {
+          "title": "Surge & Peak Management",
+          "description": "Scaled capacity during busy periods to maintain service quality at all times"
+        },
+        {
+          "title": "Detailed Reporting",
+          "description": "Regular performance reports covering call volumes, bookings and response times"
+        }
+      ],
+      "cta": "Book a Free Consultation"
+    },
+    {
+      "id": "customer-support",
+      "number": "02",
+      "icon": "\ud83c\udfa7",
+      "image": "https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=800&q=80",
+      "title": "Customer Support",
+      "subtitle": "Support Excellence",
+      "tagline": "Your brand, our voice",
+      "shortDescription": "Dedicated inbound and outbound support agents representing your brand professionally across every communication channel.",
+      "fullDescription": "Our dedicated support agents represent your brand with professionalism and care across every channel. From inbound call handling to complaint resolution and proactive outreach, we deliver a seamless customer experience that builds loyalty and drives retention.",
+      "stats": [
+        {
+          "value": "98%",
+          "label": "Satisfaction"
+        },
+        {
+          "value": "<30s",
+          "label": "Response Time"
+        }
+      ],
+      "platforms": [
+        "Phone",
+        "Email",
+        "Live Chat",
+        "Social Media",
+        "WhatsApp"
+      ],
+      "benefits": [
+        {
+          "title": "Inbound & Outbound Handling",
+          "description": "Full call management \u2014 enquiries, complaints, follow-ups and everything in between"
+        },
+        {
+          "title": "Multi-Channel Support",
+          "description": "Phone, email, live chat, WhatsApp and social media \u2014 all professionally managed"
+        },
+        {
+          "title": "Brand-Aligned Communication",
+          "description": "Agents trained on your tone, scripts and values to represent your brand authentically"
+        },
+        {
+          "title": "Complaint Resolution",
+          "description": "Structured escalation processes that turn complaints into loyalty-building moments"
+        },
+        {
+          "title": "Customer Retention Focus",
+          "description": "Proactive strategies to reduce churn and increase long-term customer value"
+        },
+        {
+          "title": "Monthly Performance Reviews",
+          "description": "Full analytics on CSAT scores, handle times, resolution rates and more"
+        }
+      ],
+      "cta": "Book a Free Consultation"
+    },
+    {
+      "id": "digital-marketing",
+      "number": "03",
+      "icon": "\ud83d\udcc8",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "title": "Digital Marketing",
+      "subtitle": "Digital Growth",
+      "tagline": "Grow your online presence",
+      "shortDescription": "From SEO and paid ads to social media management \u2014 we build your brand authority and drive measurable leads.",
+      "fullDescription": "From search engine dominance to high-converting paid campaigns, our digital marketing team drives measurable growth for your business online. We build your brand authority, generate quality leads, and turn browsers into loyal customers \u2014 all with transparent ROI reporting.",
+      "stats": [
+        {
+          "value": "3x",
+          "label": "Avg. ROI"
+        },
+        {
+          "value": "SEO",
+          "label": "& Paid Ads"
+        }
+      ],
+      "platforms": [
+        "Google Ads",
+        "Meta Ads",
+        "SEO",
+        "Social Media",
+        "Content"
+      ],
+      "benefits": [
+        {
+          "title": "Search Engine Optimisation (SEO)",
+          "description": "On-page, off-page and technical SEO to rank higher and attract organic traffic"
+        },
+        {
+          "title": "Google & Meta Paid Advertising",
+          "description": "Data-driven ad campaigns that deliver maximum return on every pound spent"
+        },
+        {
+          "title": "Social Media Management",
+          "description": "Consistent, engaging content across Instagram, Facebook, LinkedIn and more"
+        },
+        {
+          "title": "Content Creation & Strategy",
+          "description": "Professional copy, graphics and video content crafted to convert and engage"
+        },
+        {
+          "title": "Email Marketing Campaigns",
+          "description": "Targeted email sequences that nurture leads and drive repeat business"
+        },
+        {
+          "title": "Analytics & ROI Reporting",
+          "description": "Monthly dashboards showing exactly how your marketing investment is performing"
+        }
+      ],
+      "cta": "Book a Free Consultation"
+    },
+    {
+      "id": "web-development",
+      "number": "04",
+      "icon": "\ud83d\udcbb",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+      "title": "Web Development",
+      "subtitle": "Digital Presence",
+      "tagline": "Websites that convert",
+      "shortDescription": "Custom mobile-first websites, e-commerce platforms and booking systems built to perform and convert visitors into customers.",
+      "fullDescription": "We design and build premium websites that don't just look exceptional \u2014 they perform. From landing pages to full e-commerce platforms and custom booking systems, every project is built mobile-first, SEO-optimised, and engineered to convert visitors into customers.",
+      "stats": [
+        {
+          "value": "100%",
+          "label": "Mobile First"
+        },
+        {
+          "value": "Fast",
+          "label": "& SEO-Ready"
+        }
+      ],
+      "platforms": [
+        "WordPress",
+        "React",
+        "Shopify",
+        "Custom CMS",
+        "Booking Systems"
+      ],
+      "benefits": [
+        {
+          "title": "Custom Website Design",
+          "description": "Bespoke, brand-aligned designs built to reflect your identity and impress your audience"
+        },
+        {
+          "title": "Mobile-First Development",
+          "description": "Flawless experience across all devices \u2014 phones, tablets and desktops"
+        },
+        {
+          "title": "E-Commerce & Booking Systems",
+          "description": "Fully integrated online stores and booking platforms built to drive conversions"
+        },
+        {
+          "title": "Speed & Performance Optimised",
+          "description": "Fast-loading pages that improve user experience and search engine rankings"
+        },
+        {
+          "title": "SEO-Ready from Day One",
+          "description": "Built with technical SEO best practices baked in from the very first line of code"
+        },
+        {
+          "title": "Ongoing Support & Maintenance",
+          "description": "We don't disappear after launch \u2014 ongoing support keeps your site secure and updated"
+        }
+      ],
+      "cta": "Book a Free Consultation"
+    },
+    {
+      "id": "restaurant-operations",
+      "number": "05",
+      "icon": "\ud83c\udf7d\ufe0f",
+      "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80",
+      "title": "Restaurant Operations",
+      "subtitle": "Operations Management",
+      "tagline": "Smoother operations, happier customers",
+      "shortDescription": "Full operational support for restaurants \u2014 order management, reservations, delivery coordination and customer communication.",
+      "fullDescription": "We take the operational pressure off your restaurant team by managing your customer-facing communications professionally. From taking phone orders and handling reservations to coordinating deliveries and resolving customer queries \u2014 we keep your front-of-house running smoothly so you can focus on the kitchen.",
+      "stats": [
+        {
+          "value": "0",
+          "label": "Missed Orders"
+        },
+        {
+          "value": "24/7",
+          "label": "Order Handling"
+        }
+      ],
+      "platforms": [
+        "Phone Orders",
+        "Reservations",
+        "Delivery Coord.",
+        "Customer Care"
+      ],
+      "benefits": [
+        {
+          "title": "Phone Order Taking",
+          "description": "Professional agents handle every call, capturing orders accurately and efficiently"
+        },
+        {
+          "title": "Table Reservation Management",
+          "description": "Seamless booking management across phone, online and third-party platforms"
+        },
+        {
+          "title": "Delivery Coordination",
+          "description": "Driver and courier communication to ensure on-time delivery and happy customers"
+        },
+        {
+          "title": "Customer Query Resolution",
+          "description": "Dietary queries, order amendments, complaints \u2014 all handled with care and speed"
+        },
+        {
+          "title": "Peak Hour Overflow Support",
+          "description": "Extra capacity during busy periods so no call or order ever goes unanswered"
+        },
+        {
+          "title": "Brand Voice Consistency",
+          "description": "Agents trained on your menu, tone and values to represent your restaurant perfectly"
+        }
+      ],
+      "cta": "Book a Free Consultation"
+    }
+  ]
+}
