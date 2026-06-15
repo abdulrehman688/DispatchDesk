@@ -7,15 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--teal:#0d3535;--teal-2:#1a5252;--gold:#c9a84c;--gold-2:#e2c06b;--gold-3:#f0d898;--gold-pale:rgba(201,168,76,.12);--cream:#f8f4ee;--white:#ffffff;--dark:#040c0c;--text:#1e3535;--muted:#5a7a7a}
+:root{--teal:#014B46;--teal-2:#065E57;--gold:#D4A53A;--gold-2:#E6C36A;--gold-3:#F4DB97;--gold-pale:rgba(212,165,58,.12);--cream:#F6F2ED;--white:#ffffff;--dark:#003A35;--text:#1F3B38;--muted:#5a7a7a}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
 /* NAV */
 .nav{position:fixed;top:0;width:100%;z-index:9999;transition:all .4s ease}
 .nav.scrolled{background:rgba(10,30,30,.97);backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(201,168,76,.15)}
-.nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:78px}
-.nav-logo img{height:48px;object-fit:contain;transition:transform .3s}
+.nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:94px}
+.nav-logo{display:inline-flex;align-items:center}
+.nav-logo img{height:84px;object-fit:contain;transition:transform .3s;filter:drop-shadow(0 0 1px rgba(255,255,255,.4))}
 .nav-logo:hover img{transform:scale(1.04)}
 .nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
 .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;position:relative;padding:4px 0}
@@ -152,15 +153,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .consult-feat h4{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.3rem}
 .consult-feat p{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.6}
 /* FOOTER */
-.footer{background:#040c0c;padding:80px 0 0}
+.footer{--dark:#040c0c;--teal:#0d3535;--gold:#c9a84c;background:var(--dark);padding:80px 0 0}
 .footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.06)}
-.footer-logo{height:50px;object-fit:contain;opacity:.8;margin-bottom:1.5rem;display:block}
+.footer-logo-wrap{display:inline-block;margin-bottom:1.5rem}
+.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block;filter:drop-shadow(0 0 1px rgba(255,255,255,.4))}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:rgba(255,255,255,.3);line-height:1.8;max-width:280px;margin-bottom:2rem}
 .footer-socials{display:flex;gap:.7rem}
 .social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .3s;border-radius:2px}
 .social-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
-.footer-col h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
+.footer-top h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
 .footer-links a{font-size:.84rem;color:rgba(255,255,255,.38);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
 .footer-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
@@ -179,12 +181,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-logo"><img src="../logo.jpg" alt="Dispatch Desk"></div>
+  <div class="mobile-menu-logo"><img src="../logo.png" alt="Dispatch Desk"></div>
   <ul class="mobile-menu-links" id="mobileServiceLinks">
     <li><a href="../" onclick="closeMenu()">Home</a></li>
+    <li><a href="./" onclick="closeMenu()">Services</a></li>
   </ul>
   <div class="mobile-menu-bottom">
-    <a href="../contact.html" onclick="closeMenu()">Get a Free Consultation &rarr;</a>
+    <a href="../contact/" onclick="closeMenu()">Get a Free Consultation &rarr;</a>
     <div class="mobile-menu-tagline">We Answer &bull; We Dispatch &bull; You Grow</div>
   </div>
 </div>
@@ -192,10 +195,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 <!-- NAV -->
 <nav class="nav scrolled" id="mainNav">
   <div class="nav-inner">
-    <a class="nav-logo" href="../"><img src="../logo.jpg" alt="Dispatch Desk"></a>
+    <a class="nav-logo" href="../"><img src="../logo.png" alt="Dispatch Desk"></a>
     <ul class="nav-links" id="navServiceLinks">
       <li><a href="../">Home</a></li>
-      <li><a href="../contact.html" class="nav-cta-btn">Get Started</a></li>
+      <li><a href="./">Services</a></li>
+      <li><a href="../contact/" class="nav-cta-btn">Get Started</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
@@ -233,7 +237,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <h2>Not Sure Which<br>Service You <span class="accent">Need?</span></h2>
       <p>Let's have an honest conversation about your business. We'll assess your needs and recommend exactly what will drive the most growth — no pressure, no obligations.</p>
       <div class="consult-actions">
-        <a href="../contact.html" class="btn-consult">Get a Free Consultation &rarr;</a>
+        <a href="../contact/" class="btn-consult">Get a Free Consultation &rarr;</a>
         <a href="tel:+441234567890" class="btn-consult-ghost">&#9742; Speak to an Expert</a>
       </div>
     </div>
@@ -250,8 +254,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <div class="footer-inner">
     <div class="footer-top">
       <div data-reveal="up">
-        <img src="../logo.jpg" alt="Dispatch Desk" class="footer-logo">
-        <p class="footer-tagline">"We Answer. We Dispatch. You Grow." — Premium dispatch and customer support services trusted by 500+ businesses globally.</p>
+        <span class="footer-logo-wrap"><img src="../logo.png" alt="Dispatch Desk" class="footer-logo"></span>
+        <p class="footer-tagline">"We Answer. We Dispatch. You Grow." Premium dispatch and customer support trusted by businesses worldwide.</p>
         <div class="footer-socials"><a href="#" class="social-link">in</a><a href="#" class="social-link">tw</a><a href="#" class="social-link">fb</a><a href="#" class="social-link">ig</a></div>
       </div>
       <div data-reveal="up">
@@ -259,12 +263,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         <ul class="footer-links" id="footerServiceLinks"><li><a href="#">Loading&hellip;</a></li></ul>
       </div>
       <div data-reveal="up">
-        <h5>Expertise</h5>
-        <ul class="footer-links"><li><a href="#">Autocab</a></li><li><a href="#">iCabbi</a></li><li><a href="#">Cab 9</a></li><li><a href="#">Cordic</a></li><li><a href="#">Cab Treasure</a></li><li><a href="#">Data Master</a></li></ul>
+        <h5>Pages</h5>
+        <ul class="footer-links"><li><a href="../">Home</a></li><li><a href="./">Services</a></li><li><a href="../contact/">Contact</a></li></ul>
       </div>
       <div data-reveal="up">
         <h5>Company</h5>
-        <ul class="footer-links"><li><a href="../">Home</a></li><li><a href="../#about">About Us</a></li><li><a href="../#process">Our Process</a></li><li><a href="../#why-us">Why Choose Us</a></li><li><a href="../#testimonials">Client Stories</a></li><li><a href="../contact.html">Contact Us</a></li></ul>
+        <ul class="footer-links"><li><a href="../#about">About Us</a></li><li><a href="../#process">Our Process</a></li><li><a href="../#why-us">Why Choose Us</a></li><li><a href="../#testimonials">Client Stories</a></li></ul>
         <div style="margin-top:2rem"><h5>Contact</h5><p style="font-size:.82rem;color:rgba(255,255,255,.3);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p></div>
       </div>
     </div>
@@ -355,7 +359,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       +'<div class="service-divider-line"></div>'
       +'<p class="service-desc">'+s.fullDescription+'</p>'
       +'<ul class="service-benefits">'+benefits+'</ul>'
-      +'<a href="../contact.html" class="service-cta"><span>'+s.cta+'</span><span class="service-cta-arrow">&rarr;</span></a>'
+      +'<a href="../contact/" class="service-cta"><span>'+s.cta+'</span><span class="service-cta-arrow">&rarr;</span></a>'
       +'</div>'
       +'</div>'
       +'</div>'
@@ -369,8 +373,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       var services=data.services;
       var container=document.getElementById('servicesContainer');
       var heroPills=document.getElementById('heroPills');
-      var navLinks=document.getElementById('navServiceLinks');
-      var mobileLinks=document.getElementById('mobileServiceLinks');
       var footerLinks=document.getElementById('footerServiceLinks');
 
       /* Build sections */
@@ -380,15 +382,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       heroPills.innerHTML=services.map(function(s){
         return'<a href="#'+s.id+'" class="hero-pill" data-id="'+s.id+'"><span class="pill-num">'+s.number+'</span> '+s.title+'</a>';
       }).join('');
-
-      /* Nav links */
-      navLinks.innerHTML='<li><a href="../">Home</a></li>'
-        +services.map(function(s){return'<li><a href="#'+s.id+'">'+s.title.split(' ')[0]+'</a></li>'}).join('')
-        +'<li><a href="../contact.html" class="nav-cta-btn">Get Started</a></li>';
-
-      /* Mobile menu links */
-      mobileLinks.innerHTML='<li><a href="../" onclick="closeMenu()">Home</a></li>'
-        +services.map(function(s){return'<li><a href="#'+s.id+'" onclick="closeMenu()">'+s.title+'</a></li>'}).join('');
 
       /* Footer links */
       footerLinks.innerHTML=services.map(function(s){

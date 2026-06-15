@@ -8,17 +8,17 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --teal:#0d3535;
-  --teal-2:#1a5252;
-  --teal-3:#246060;
-  --gold:#c9a84c;
-  --gold-2:#e2c06b;
-  --gold-3:#f0d898;
-  --gold-pale:rgba(201,168,76,.12);
-  --cream:#f8f4ee;
+  --teal:#014B46;
+  --teal-2:#065E57;
+  --teal-3:#0A6B63;
+  --gold:#D4A53A;
+  --gold-2:#E6C36A;
+  --gold-3:#F4DB97;
+  --gold-pale:rgba(212,165,58,.12);
+  --cream:#F6F2ED;
   --white:#ffffff;
-  --dark:#040c0c;
-  --text:#1e3535;
+  --dark:#003A35;
+  --text:#1F3B38;
   --muted:#5a7a7a;
 }
 html{scroll-behavior:smooth}
@@ -30,8 +30,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 /* ========== NAV ========== */
 .nav{position:fixed;top:0;width:100%;z-index:9999;transition:all .4s ease}
 .nav.scrolled{background:rgba(10,30,30,.97);backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(201,168,76,.15)}
-.nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:78px}
-.nav-logo img{height:48px;object-fit:contain;transition:transform .3s}
+.nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:94px}
+.nav-logo{display:inline-flex;align-items:center}
+.nav-logo img{height:84px;object-fit:contain;transition:transform .3s;filter:drop-shadow(0 0 1px rgba(255,255,255,.4))}
 .nav-logo:hover img{transform:scale(1.04)}
 .nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
 .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;position:relative;padding:4px 0}
@@ -215,15 +216,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .btn-outline-w:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-3px)}
 
 /* ========== FOOTER ========== */
-.footer{background:#040c0c;padding:80px 0 0}
+.footer{--dark:#040c0c;--teal:#0d3535;--gold:#c9a84c;background:var(--dark);padding:80px 0 0}
 .footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.06)}
-.footer-logo{height:50px;object-fit:contain;opacity:.8;margin-bottom:1.5rem;display:block}
+.footer-logo-wrap{display:inline-block;margin-bottom:1.5rem}
+.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block;filter:drop-shadow(0 0 1px rgba(255,255,255,.4))}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:rgba(255,255,255,.3);line-height:1.8;max-width:280px;margin-bottom:2rem}
 .footer-socials{display:flex;gap:.7rem}
 .social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .3s;border-radius:2px}
 .social-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
-.footer-col h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
+.footer-top h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
 .footer-links a{font-size:.84rem;color:rgba(255,255,255,.38);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
 .footer-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
@@ -265,16 +267,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-logo"><img src="../logo.jpg" alt=""></div>
+  <div class="mobile-menu-logo"><img src="../logo.png" alt=""></div>
   <ul class="mobile-menu-links">
-    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-    <li><a href="services.html" onclick="closeMenu()">Services</a></li>
-    <li><a href="#contact-form" onclick="closeMenu()">Send Message</a></li>
-    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
-    <li><a href="#map" onclick="closeMenu()">Find Us</a></li>
+    <li><a href="../" onclick="closeMenu()">Home</a></li>
+    <li><a href="../services/" onclick="closeMenu()">Services</a></li>
   </ul>
   <div class="mobile-menu-bottom">
-    <a href="mailto:info@dispatchdesk.com" onclick="closeMenu()">Email Us &rarr;</a>
+    <a href="#contact-form" onclick="closeMenu()">Get Started &rarr;</a>
     <div class="mobile-menu-tagline">We Answer &bull; We Dispatch &bull; You Grow</div>
   </div>
 </div>
@@ -282,13 +281,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 <!-- NAV -->
 <nav class="nav scrolled" id="mainNav">
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html"><img src="../logo.jpg" alt="Dispatch Desk"></a>
+    <a class="nav-logo" href="../"><img src="../logo.png" alt="Dispatch Desk"></a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="#contact-form">Send Message</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="mailto:info@dispatchdesk.com" class="nav-cta-btn">Email Us</a></li>
+      <li><a href="../">Home</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><a href="#contact-form" class="nav-cta-btn">Get Started</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -305,7 +302,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <div class="hero-lines"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="hero-inner">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><span>&rsaquo;</span><span>Contact</span>
+      <a href="../">Home</a><span>&rsaquo;</span><span>Contact</span>
     </div>
     <div class="hero-tag"><span class="hero-tag-dot"></span>Get In Touch</div>
     <h1>Let&rsquo;s <span class="gold">Start</span> a<br>Conversation</h1>
@@ -532,8 +529,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <div class="footer-inner">
     <div class="footer-top">
       <div data-reveal="up">
-        <img src="../logo.jpg" alt="Dispatch Desk" class="footer-logo">
-        <p class="footer-tagline">&ldquo;We Answer. We Dispatch. You Grow.&rdquo; Premium dispatch and customer support trusted by 500+ businesses globally.</p>
+        <span class="footer-logo-wrap"><img src="../logo.png" alt="Dispatch Desk" class="footer-logo"></span>
+        <p class="footer-tagline">&ldquo;We Answer. We Dispatch. You Grow.&rdquo; Premium dispatch and customer support trusted by businesses worldwide.</p>
         <div class="footer-socials">
           <a href="#" class="social-link">in</a>
           <a href="#" class="social-link">tw</a>
@@ -544,33 +541,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <div data-reveal="up">
         <h5>Services</h5>
         <ul class="footer-links">
-          <li><a href="services.html#taxi">Taxi Booking Services</a></li>
-          <li><a href="services.html#support">Customer Support</a></li>
-          <li><a href="services.html#marketing">Digital Marketing</a></li>
-          <li><a href="services.html#webdev">Web Development</a></li>
-          <li><a href="services.html#restaurant">Restaurant Operations</a></li>
+          <li><a href="../services/#taxi-booking">Taxi Booking Services</a></li>
+          <li><a href="../services/#customer-support">Customer Support</a></li>
+          <li><a href="../services/#digital-marketing">Digital Marketing</a></li>
+          <li><a href="../services/#web-development">Web Development</a></li>
+          <li><a href="../services/#restaurant-operations">Restaurant Operations</a></li>
         </ul>
       </div>
       <div data-reveal="up">
-        <h5>Expertise</h5>
+        <h5>Pages</h5>
         <ul class="footer-links">
-          <li><a href="#">Autocab</a></li>
-          <li><a href="#">iCabbi</a></li>
-          <li><a href="#">Cab 9</a></li>
-          <li><a href="#">Cordic</a></li>
-          <li><a href="#">Cab Treasure</a></li>
-          <li><a href="#">Data Master</a></li>
+          <li><a href="../">Home</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="./">Contact</a></li>
         </ul>
       </div>
       <div data-reveal="up">
         <h5>Company</h5>
         <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="services.html">Our Services</a></li>
-          <li><a href="index.html#why-us">Why Choose Us</a></li>
-          <li><a href="index.html#testimonials">Client Stories</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="../#about">About Us</a></li>
+          <li><a href="../#process">Our Process</a></li>
+          <li><a href="../#why-us">Why Choose Us</a></li>
+          <li><a href="../#testimonials">Client Stories</a></li>
         </ul>
         <div style="margin-top:2rem">
           <h5>Contact</h5>
