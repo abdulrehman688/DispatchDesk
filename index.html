@@ -373,8 +373,30 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 /* NEW COMPONENT RESPONSIVE */
 @media(max-width:1024px){.outsource-grid,.case-wrap{grid-template-columns:1fr;gap:3rem}.outsource-media>img{height:400px}}
 @media(max-width:768px){.cost-compare{grid-template-columns:1fr}.cc-vs{padding:1rem;border-top:1px solid rgba(13,53,53,.08);border-bottom:1px solid rgba(13,53,53,.08)}.case-stats{grid-template-columns:1fr}.case-media img{height:300px}.outsource-media>img{height:320px}}
+/* PLATFORMS */
+.platforms-sec{background:var(--teal);padding:110px 0;position:relative;overflow:hidden;border-top:1px solid rgba(201,168,76,.12)}
+.platforms-header{text-align:center;margin-bottom:3.5rem}
+.platforms-header .tag{border-color:rgba(201,168,76,.3);color:var(--gold)}
+.platforms-header .h2{color:#fff}
+.platforms-header .h2 .accent{color:var(--gold-2)}
+.platforms-lead{text-align:center;color:rgba(255,255,255,.55);font-size:.95rem;max-width:560px;margin:1rem auto 0;line-height:1.8}
+.plat-track-wrap{overflow:hidden;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);margin-bottom:4rem}
+.plat-track{display:flex;gap:1rem;width:max-content;animation:platScroll 22s linear infinite}
+.plat-track:hover{animation-play-state:paused}
+@keyframes platScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.plat-pill{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.2);color:rgba(255,255,255,.8);padding:.55rem 1.4rem;border-radius:50px;font-size:.82rem;font-weight:500;white-space:nowrap;letter-spacing:.04em}
+.plat-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.plat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.06);margin-top:0}
+.plat-card{background:rgba(1,60,53,.7);padding:2.4rem 1.5rem;text-align:center;transition:all .35s;position:relative;overflow:hidden}
+.plat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C9850A,#F4DB97,#C9850A);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.plat-card:hover{background:rgba(255,255,255,.07)}
+.plat-card:hover::before{transform:scaleX(1)}
+.plat-card-logo{width:56px;height:56px;border-radius:4px;background:rgba(212,165,58,.12);border:1px solid rgba(212,165,58,.28);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold-2);margin:0 auto 1.3rem;transition:all .35s}
+.plat-card:hover .plat-card-logo{background:var(--gold);color:var(--teal);border-color:var(--gold)}
+.plat-card h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:.4rem}
+.plat-card p{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.65}
 /* RESPONSIVE */
-@media(max-width:1024px){.about-grid,.grow-top,.why-header{grid-template-columns:1fr;gap:3rem}.why-grid,.test-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr;gap:3rem}}
+@media(max-width:1024px){.about-grid,.grow-top,.why-header{grid-template-columns:1fr;gap:3rem}.why-grid,.test-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr;gap:3rem}.plat-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.hero-inner{grid-template-columns:1fr;text-align:center;padding-bottom:80px}.hero h1 .line-indent{padding-left:0}.hero-visual{display:none}.hero-desc,.hero-actions,.hero-badges{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.hero-badges{justify-content:center}.hero-stats-row{margin-top:1.5rem}.sec{padding:80px 0}.soft-grid{grid-template-columns:repeat(2,1fr)}.proc-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.grow-contact-grid{grid-template-columns:1fr}.grow-contact-band{padding:0 4% 4rem}.grow-contact-heading{padding:3rem 0 2rem}.grow-contact-heading h3{font-size:1.8rem}.stats-strip-inner{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr;gap:2.5rem}.footer-bottom{flex-direction:column;text-align:center}.soft-header{flex-direction:column;align-items:flex-start}.soft-note{text-align:left;max-width:100%}.why-header{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr!important}.svc-card{grid-column:auto!important}.grow-right{grid-template-columns:1fr}}
 @media(max-width:520px){.hero h1{font-size:2rem}.grow-title{font-size:2.6rem}.soft-grid{grid-template-columns:1fr}.test-grid{grid-template-columns:1fr}.metrics-grid{grid-template-columns:1fr 1fr}.hero-stats-row{flex-direction:column;gap:1px}.stats-strip-inner{grid-template-columns:1fr 1fr}.grow-contact-grid{grid-template-columns:1fr}}
 </style>
@@ -529,6 +551,66 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   </div>
 </section>
 
+
+<!-- PLATFORMS -->
+<section class="platforms-sec" id="platforms">
+  <div class="sec-inner">
+    <div class="platforms-header" data-reveal="up">
+      <span class="tag">Our Expertise</span>
+      <h2 class="h2">Platforms We <span class="accent">Master</span></h2>
+      <div class="divider divider-center"></div>
+      <p class="platforms-lead">Our team is trained across the industry's leading dispatch and fleet management platforms.</p>
+    </div>
+    <div class="plat-track-wrap">
+      <div class="plat-track">
+        <div class="plat-pill">Autocab</div>
+        <div class="plat-pill">iCabbi</div>
+        <div class="plat-pill">Cab 9</div>
+        <div class="plat-pill">Cordic</div>
+        <div class="plat-pill">Cab Treasure</div>
+        <div class="plat-pill">Data Master</div>
+        <div class="plat-pill">Autocab</div>
+        <div class="plat-pill">iCabbi</div>
+        <div class="plat-pill">Cab 9</div>
+        <div class="plat-pill">Cordic</div>
+        <div class="plat-pill">Cab Treasure</div>
+        <div class="plat-pill">Data Master</div>
+      </div>
+    </div>
+    <div class="plat-grid" data-reveal="up">
+      <div class="plat-card">
+        <div class="plat-card-logo">AC</div>
+        <h4>Autocab</h4>
+        <p>UK's leading dispatch software</p>
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-logo">iC</div>
+        <h4>iCabbi</h4>
+        <p>Cloud-based dispatch platform</p>
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-logo">C9</div>
+        <h4>Cab 9</h4>
+        <p>Modern taxi management</p>
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-logo">CO</div>
+        <h4>Cordic</h4>
+        <p>Intelligent dispatch system</p>
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-logo">CT</div>
+        <h4>Cab Treasure</h4>
+        <p>Fleet & booking management</p>
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-logo">DM</div>
+        <h4>Data Master</h4>
+        <p>Data-driven operations</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PROCESS -->
 <section class="sec proc-sec" id="process">
