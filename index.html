@@ -391,8 +391,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .plat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C9850A,#F4DB97,#C9850A);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
 .plat-card:hover{background:rgba(255,255,255,.07)}
 .plat-card:hover::before{transform:scaleX(1)}
-.plat-card-logo{width:56px;height:56px;border-radius:4px;background:rgba(212,165,58,.12);border:1px solid rgba(212,165,58,.28);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold-2);margin:0 auto 1.3rem;transition:all .35s}
-.plat-card:hover .plat-card-logo{background:var(--gold);color:var(--teal);border-color:var(--gold)}
+.plat-card-logo{width:90px;height:60px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 1.3rem;padding:8px;transition:all .35s;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.plat-card-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.plat-card:hover .plat-card-logo{box-shadow:0 6px 24px rgba(212,165,58,.35);transform:translateY(-2px)}
 .plat-card h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:.4rem}
 .plat-card p{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.65}
 /* RESPONSIVE */
@@ -568,45 +569,45 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         <div class="plat-pill">Cab 9</div>
         <div class="plat-pill">Cordic</div>
         <div class="plat-pill">Cab Treasure</div>
-        <div class="plat-pill">Data Master</div>
+        <div class="plat-pill">TaxiCaller</div>
         <div class="plat-pill">Autocab</div>
         <div class="plat-pill">iCabbi</div>
         <div class="plat-pill">Cab 9</div>
         <div class="plat-pill">Cordic</div>
         <div class="plat-pill">Cab Treasure</div>
-        <div class="plat-pill">Data Master</div>
+        <div class="plat-pill">TaxiCaller</div>
       </div>
     </div>
     <div class="plat-grid" data-reveal="up">
       <div class="plat-card">
-        <div class="plat-card-logo">AC</div>
+        <div class="plat-card-logo"><img src="assets/images/softwares/Autocab.jpeg" alt="Autocab" loading="lazy"></div>
         <h4>Autocab</h4>
         <p>UK's leading dispatch software</p>
       </div>
       <div class="plat-card">
-        <div class="plat-card-logo">iC</div>
+        <div class="plat-card-logo"><img src="assets/images/softwares/iCabbi.jpeg" alt="iCabbi" loading="lazy"></div>
         <h4>iCabbi</h4>
         <p>Cloud-based dispatch platform</p>
       </div>
       <div class="plat-card">
-        <div class="plat-card-logo">C9</div>
+        <div class="plat-card-logo"><img src="assets/images/softwares/CAB9.jpeg" alt="Cab 9" loading="lazy"></div>
         <h4>Cab 9</h4>
         <p>Modern taxi management</p>
       </div>
       <div class="plat-card">
-        <div class="plat-card-logo">CO</div>
+        <div class="plat-card-logo"><img src="assets/images/softwares/Cordic.jpeg" alt="Cordic" loading="lazy"></div>
         <h4>Cordic</h4>
         <p>Intelligent dispatch system</p>
       </div>
       <div class="plat-card">
-        <div class="plat-card-logo">CT</div>
+        <div class="plat-card-logo"><img src="assets/images/softwares/CabTreasure.jpeg" alt="Cab Treasure" loading="lazy"></div>
         <h4>Cab Treasure</h4>
         <p>Fleet & booking management</p>
       </div>
       <div class="plat-card">
-        <div class="plat-card-logo">DM</div>
-        <h4>Data Master</h4>
-        <p>Data-driven operations</p>
+        <div class="plat-card-logo"><img src="assets/images/softwares/TaxiCaller.jpeg" alt="TaxiCaller" loading="lazy"></div>
+        <h4>TaxiCaller</h4>
+        <p>Smart dispatch & booking</p>
       </div>
     </div>
   </div>
