@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="../logo.png">
 <link rel="apple-touch-icon" href="../logo.png">
-<title>Services — Dispatch Desk</title>
+<title>Services | Dispatch Desk</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -51,7 +51,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .mobile-menu-bottom a{display:inline-block;background:var(--gold);color:var(--teal);padding:.9rem 2.5rem;font-weight:700;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;margin-bottom:1.2rem}
 .mobile-menu-tagline{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25)}
 /* HERO */
-.page-hero{padding:160px 5% 100px;background:linear-gradient(135deg,var(--cream) 0%,#edf4f3 60%,var(--cream) 100%);position:relative;overflow:hidden}
+.page-hero{padding:130px 5% 0;background:linear-gradient(135deg,var(--cream) 0%,#edf4f3 60%,var(--cream) 100%);position:relative;overflow:hidden}
 .hero-noise{position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(1,75,70,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(1,75,70,.04) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
 .hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,165,58,.08) 0%,transparent 65%);top:-200px;right:-150px;pointer-events:none;animation:glowPulse 8s ease-in-out infinite alternate}
@@ -65,72 +65,126 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .hero-lines span:nth-child(5){left:88%;height:200px;animation-duration:10s;animation-delay:3s}
 @keyframes lineRise{0%{top:110%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:-20%;opacity:0}}
 .hero-inner{max-width:1220px;margin:0 auto;position:relative;z-index:1}
-.breadcrumb{display:flex;align-items:center;gap:.6rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(1,75,70,.4);margin-bottom:1.8rem;opacity:0;animation:aUp .7s ease .2s forwards}
+.breadcrumb{display:flex;align-items:center;gap:.6rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(1,75,70,.4);margin-bottom:2rem;opacity:0;animation:aUp .7s ease .2s forwards}
 .breadcrumb a{color:rgba(1,75,70,.4);text-decoration:none;transition:color .3s}.breadcrumb a:hover{color:var(--gold)}.breadcrumb span{color:var(--gold)}
-.hero-tag{display:inline-flex;align-items:center;gap:.7rem;border:1px solid rgba(1,75,70,.18);padding:.4rem 1rem;border-radius:2px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;opacity:0;animation:aUp .7s ease .3s forwards}
+.hero-content-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start;padding-bottom:3rem}
+.hero-tag{display:inline-flex;align-items:center;gap:.7rem;border:1px solid rgba(1,75,70,.18);padding:.4rem 1rem;border-radius:2px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;opacity:0;animation:aUp .7s ease .3s forwards}
 .hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 2s ease infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:600;color:var(--dark);line-height:1.08;margin-bottom:1.5rem;opacity:0;animation:aUp .9s ease .4s forwards}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,4rem);font-weight:600;color:var(--dark);line-height:1.1;margin-bottom:1.2rem;opacity:0;animation:aUp .9s ease .4s forwards}
 .page-hero h1 .gold{background:linear-gradient(135deg,#C9950E 0%,#E8B830 45%,#C9950E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.page-hero p{font-size:1.05rem;color:var(--text);line-height:2;max-width:600px;opacity:0;animation:aUp .9s ease .6s forwards}
-.hero-pills{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2.5rem;opacity:0;animation:aUp .9s ease .8s forwards}
-.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(1,75,70,.06);border:1px solid rgba(1,75,70,.12);padding:.5rem 1.1rem;border-radius:50px;font-size:.78rem;color:var(--teal);text-decoration:none;transition:all .3s;cursor:pointer}
+.page-hero p{font-size:.95rem;color:var(--text);line-height:1.95;opacity:0;animation:aUp .9s ease .6s forwards;margin-bottom:1.8rem}
+.hero-stats-row{display:flex;gap:2.5rem;margin-bottom:2rem;opacity:0;animation:aUp .9s ease .7s forwards}
+.hero-stat-item strong{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--teal);display:block;line-height:1}
+.hero-stat-item span{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.hero-actions-row{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:aUp .9s ease .85s forwards}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--teal-2);color:#fff;padding:.85rem 1.8rem;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;text-decoration:none;transition:all .3s}
+.btn-hero-primary:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 12px 32px rgba(1,75,70,.25)}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:.6rem;background:transparent;color:var(--teal);padding:.85rem 1.8rem;font-weight:600;font-size:.85rem;letter-spacing:.06em;border:1.5px solid rgba(1,75,70,.25);border-radius:2px;text-decoration:none;transition:all .3s}
+.btn-hero-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:1rem;opacity:0;animation:aUp .9s ease .5s forwards}
+.hero-feat{background:#fff;border:1px solid rgba(1,75,70,.1);border-top:3px solid var(--gold);border-radius:3px;padding:1.4rem 1.2rem;transition:all .35s}
+.hero-feat:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(1,75,70,.1)}
+.hero-feat-ico{width:36px;height:36px;background:var(--teal);border-radius:3px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;color:#fff}
+.hero-feat h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--dark);margin-bottom:.4rem;line-height:1.2}
+.hero-feat p{font-size:.75rem;color:var(--muted);line-height:1.65}
+.hero-strip{background:var(--teal);display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2}
+.hero-strip-item{padding:1.6rem 2rem;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+.hero-strip-item:last-child{border-right:none}
+.hero-strip-item strong{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold-2);display:block;line-height:1;margin-bottom:.3rem}
+.hero-strip-item span{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.5)}
+.hero-pills{display:flex;gap:.8rem;flex-wrap:wrap;padding:1.5rem 0;opacity:0;animation:aUp .9s ease .95s forwards;border-top:1px solid rgba(1,75,70,.08)}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(1,75,70,.06);border:1px solid rgba(1,75,70,.12);padding:.45rem 1rem;border-radius:50px;font-size:.76rem;color:var(--teal);text-decoration:none;transition:all .3s;cursor:pointer}
 .hero-pill:hover,.hero-pill.active{background:var(--gold);border-color:var(--gold);color:var(--teal);font-weight:600}
-.hero-pill .pill-num{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--gold)}.hero-pill:hover .pill-num,.hero-pill.active .pill-num{color:var(--teal)}
+.hero-pill .pill-num{font-family:'Cormorant Garamond',serif;font-size:.82rem;color:var(--gold)}.hero-pill:hover .pill-num,.hero-pill.active .pill-num{color:var(--teal)}
 @keyframes aUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 /* REVEAL */
-[data-reveal]{opacity:0;transition:opacity .85s ease,transform .85s ease}
-[data-reveal="up"]{transform:translateY(50px)}[data-reveal="left"]{transform:translateX(-50px)}[data-reveal="right"]{transform:translateX(50px)}
+[data-reveal]{opacity:0;transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+[data-reveal="up"]{transform:translateY(60px)}
+[data-reveal="left"]{transform:translateX(-60px)}
+[data-reveal="right"]{transform:translateX(60px)}
+[data-reveal="scale"]{transform:scale(.92)}
 [data-reveal].is-visible{opacity:1;transform:none}
-/* SERVICE SECTIONS (dynamically generated) */
-.service-sec{padding:120px 0;position:relative}
-.service-sec:nth-child(odd){background:#fff}
-.service-sec:nth-child(even){background:var(--cream)}
-.service-divider{height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.3),transparent);position:absolute;top:0;left:5%;right:5%}
-.service-inner{max-width:1220px;margin:0 auto;padding:0 5%}
-.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-.service-grid.reverse{direction:rtl}.service-grid.reverse>*{direction:ltr}
-.service-visual{position:relative}
-.service-visual-box{background:var(--teal);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.service-visual-box::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:40px 40px}
-.service-big-num{position:absolute;bottom:-1.5rem;right:-1rem;font-family:'Cormorant Garamond',serif;font-size:11rem;font-weight:700;color:rgba(201,168,76,.07);line-height:1;pointer-events:none;user-select:none}
-.service-icon-wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-.service-main-icon{font-size:5rem;filter:drop-shadow(0 0 30px rgba(201,168,76,.2))}
-.service-icon-label{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.4);letter-spacing:.1em}
-.service-visual-accent{position:absolute;bottom:-1.2rem;left:1.5rem;width:60px;height:4px;background:var(--gold)}
-.service-visual-corner{position:absolute;top:1.2rem;right:-1.2rem;width:40px;height:40px;border-top:3px solid var(--gold);border-right:3px solid var(--gold)}
-.visual-stat{position:absolute;background:rgba(201,168,76,.95);padding:.8rem 1.2rem;z-index:2}
-.visual-stat-n{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--teal);display:block;line-height:1}
-.visual-stat-l{font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;opacity:.8}
-.vs-top-right{top:1.5rem;right:1.5rem}.vs-bottom-left{bottom:1.5rem;left:1.5rem}
-.vis-circle{position:absolute;border-radius:50%;border:1px solid rgba(201,168,76,.15);animation:visOrbit 20s linear infinite}
-.vis-circle-1{width:200px;height:200px;top:50%;left:50%;transform:translate(-50%,-50%)}
-.vis-circle-2{width:140px;height:140px;top:50%;left:50%;transform:translate(-50%,-50%);animation-direction:reverse;animation-duration:14s;border-color:rgba(201,168,76,.1)}
-@keyframes visOrbit{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-.service-platforms{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
-.platform-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold-pale);border:1px solid rgba(201,168,76,.2);padding:.35rem .8rem;font-size:.75rem;font-weight:500;color:var(--teal);border-radius:2px;transition:all .3s}
-.platform-tag:hover{background:var(--gold);color:var(--teal)}
-.service-content{}
-.service-tag{display:inline-flex;align-items:center;gap:.7rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.2rem}
-.service-tag::before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold)}
-.service-num-label{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:rgba(201,168,76,.5);margin-bottom:.5rem;display:block;letter-spacing:.1em}
-.service-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;color:var(--teal);line-height:1.15;margin-bottom:1rem}
-.service-divider-line{width:40px;height:2px;background:linear-gradient(to right,var(--gold),transparent);margin-bottom:1.5rem}
-.service-desc{font-size:.95rem;color:var(--muted);line-height:1.95;margin-bottom:2rem}
-.service-benefits{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.5rem}
-.service-benefit{display:flex;align-items:flex-start;gap:1rem;padding:.9rem 1.1rem;border:1px solid transparent;transition:all .35s;border-radius:2px}
-.service-benefit:hover{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.04);transform:translateX(5px)}
-.benefit-check{width:22px;height:22px;min-width:22px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--teal);font-weight:700;margin-top:1px;flex-shrink:0}
-.benefit-text{font-size:.9rem;color:var(--text);line-height:1.6}
-.benefit-text strong{display:block;font-weight:600;color:var(--teal);margin-bottom:.15rem;font-size:.92rem}
-.benefit-text span{font-size:.84rem;color:var(--muted)}
-.service-cta{display:inline-flex;align-items:center;gap:.7rem;background:var(--teal);color:#fff;padding:.9rem 2rem;font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;text-decoration:none;transition:all .35s;border:2px solid var(--teal);position:relative;overflow:hidden}
-.service-cta::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform .4s ease;z-index:0}
-.service-cta:hover{color:var(--teal);border-color:var(--gold)}.service-cta:hover::before{transform:translateX(0)}
-.service-cta span{position:relative;z-index:1}
-.service-cta-arrow{position:relative;z-index:1;transition:transform .35s}.service-cta:hover .service-cta-arrow{transform:translateX(5px)}
+.svc-card[data-reveal]{transition-duration:1s}
+.svc-card:nth-child(odd)[data-reveal]{transform:translateX(-60px)}
+.svc-card:nth-child(even)[data-reveal]{transform:translateX(60px)}
+.svc-card[data-reveal].is-visible{opacity:1;transform:none}
+/* WHY OUTSOURCE */
+.why-outsource{background:var(--teal);padding:80px 5%;position:relative;overflow:hidden}
+.why-outsource-inner{max-width:1220px;margin:0 auto}
+.why-out-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:3rem}
+.why-out-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:600;color:#fff;line-height:1.15}
+.why-out-header h2 .accent{color:var(--gold-2)}
+.why-out-header p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.9}
+.why-out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.why-out-item{background:rgba(1,55,50,.6);padding:2.4rem 2rem;transition:background .3s}
+.why-out-item:hover{background:rgba(255,255,255,.06)}
+.why-out-ico{width:46px;height:46px;background:rgba(212,165,58,.15);border:1px solid rgba(212,165,58,.3);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;color:var(--gold)}
+.why-out-item h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;margin-bottom:.7rem}
+.why-out-item p{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.85}
+.why-out-item strong{color:var(--gold-2)}
+/* SERVICE CARDS */
+.services-sec-wrap{background:var(--cream);padding:80px 5% 0}
+.services-sec-header{max-width:1220px;margin:0 auto;padding:0 0 3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
+.services-sec-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;color:var(--dark);line-height:1.15}
+.services-sec-header h2 .accent{color:var(--gold)}
+.services-sec-header p{font-size:.9rem;color:var(--muted);line-height:1.85}
+.services-cards-grid{max-width:1220px;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem}
+.svc-card{display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,.04);transition:all .5s ease;border:1px solid rgba(1,75,70,.06)}
+.svc-card:hover{box-shadow:0 16px 48px rgba(1,75,70,.1);transform:translateY(-4px)}
+.svc-card:nth-child(even){direction:rtl}
+.svc-card:nth-child(even)>*{direction:ltr}
+.svc-card-visual{position:relative;min-height:380px;overflow:hidden}
+.svc-card-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease;position:absolute;inset:0}
+.svc-card:hover .svc-card-visual img{transform:scale(1.06)}
+.svc-card-visual-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(1,75,70,.6),rgba(0,40,36,.78));z-index:1}
+.svc-card-visual-num{position:absolute;bottom:1.2rem;right:1.5rem;font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:700;color:rgba(255,255,255,.1);line-height:1;z-index:2}
+.svc-card-visual-tag{position:absolute;top:1.5rem;left:1.5rem;z-index:2;display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,165,58,.15);border:1px solid rgba(212,165,58,.35);backdrop-filter:blur(8px);padding:.4rem 1rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);font-weight:600;border-radius:2px}
+.svc-card-body{padding:2.8rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
+.svc-card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.2vw,1.9rem);font-weight:600;color:var(--dark);line-height:1.2;margin-bottom:.5rem}
+.svc-card-tagline{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--gold);margin-bottom:1rem}
+.svc-card-desc{font-size:.85rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem}
+.svc-card-benefits{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .8rem;margin-bottom:1.8rem}
+.svc-card-benefits li{font-size:.78rem;color:var(--text);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
+.svc-card-benefits li::before{content:'';width:18px;height:18px;min-width:18px;background:var(--gold);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 6L5 8.5L9.5 3.5' stroke='%23014B46' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:12px}
+.svc-card-stats{display:flex;gap:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(1,75,70,.08);margin-bottom:1.5rem}
+.svc-card-stat strong{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--teal);display:block;line-height:1}
+.svc-card-stat span{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.svc-card-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-2);color:#fff;padding:.7rem 1.5rem;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:2px;text-decoration:none;transition:all .3s;align-self:flex-start}
+.svc-card-cta:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,75,70,.2)}
+.svc-card-cta svg{transition:transform .3s}
+.svc-card-cta:hover svg{transform:translateX(3px)}
+/* PLATFORMS STRIP */
+.platform-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold-pale);border:1px solid rgba(201,168,76,.2);padding:.35rem .8rem;font-size:.72rem;font-weight:500;color:var(--teal);border-radius:2px}
+/* HOW WE WORK */
+.how-work-sec{background:#fff;padding:90px 5%;border-top:1px solid rgba(1,75,70,.06)}
+.how-work-inner{max-width:1220px;margin:0 auto}
+.sec-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:600;color:var(--dark);line-height:1.2;margin-bottom:.8rem}
+.sec-sub{font-size:.9rem;color:var(--muted);line-height:1.85;max-width:560px}
+.how-work-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3.5rem}
+.how-work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(0,0,0,.04);position:relative}
+.how-step{background:#fff;padding:2.2rem 1.8rem;position:relative;border-right:1px solid rgba(1,75,70,.06)}
+.how-step:last-child{border-right:none}
+.how-step-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:rgba(1,75,70,.06);line-height:1;margin-bottom:.8rem}
+.how-step-circle{width:40px;height:40px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;margin-bottom:1.2rem;border:3px solid rgba(212,165,58,.3)}
+.how-step h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
+.how-step p{font-size:.78rem;color:var(--muted);line-height:1.7}
+.how-step-bar{height:3px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.5rem}
+/* HOW WE HELPED */
+.how-helped-sec{background:var(--cream);padding:90px 5%;border-top:1px solid rgba(1,75,70,.06)}
+.how-helped-inner{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.helped-content .sec-label{margin-bottom:.8rem}
+.helped-content blockquote{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--text);line-height:1.7;border-left:3px solid var(--gold);padding-left:1.5rem;margin:1.5rem 0}
+.helped-content p{font-size:.88rem;color:var(--muted);line-height:1.85}
+.helped-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.helped-stat{background:#fff;border:1px solid rgba(1,75,70,.08);border-top:3px solid var(--gold);padding:1.8rem 1.5rem;border-radius:2px;transition:all .35s}
+.helped-stat:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(1,75,70,.08)}
+.helped-stat strong{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--teal);display:block;line-height:1;margin-bottom:.3rem}
+.helped-stat span{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
 /* LOADING STATE */
-.services-loading{text-align:center;padding:8rem 2rem;color:var(--muted)}
+.services-loading{text-align:center;padding:6rem 2rem;color:var(--muted);background:#fff;border-radius:4px}
 .loading-dot{display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;margin:0 3px;animation:loadBounce 1.2s ease infinite}
 .loading-dot:nth-child(2){animation-delay:.2s}.loading-dot:nth-child(3){animation-delay:.4s}
 @keyframes loadBounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
@@ -150,42 +204,99 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .btn-consult:hover{background:var(--gold-2);transform:translateY(-3px);box-shadow:0 15px 40px rgba(201,168,76,.2)}
 .btn-consult-ghost{display:inline-flex;align-items:center;gap:.7rem;background:transparent;color:rgba(255,255,255,.65);padding:1rem 2.4rem;font-weight:500;font-size:.9rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;text-decoration:none;transition:all .3s}
 .btn-consult-ghost:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-3px)}
-.consult-features{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,.08);margin-top:5rem}
-.consult-feat{background:rgba(255,255,255,.03);padding:2rem;text-align:center;transition:background .3s;border:1px solid rgba(255,255,255,.04)}
-.consult-feat:hover{background:rgba(255,255,255,.07)}
-.consult-feat-ico{font-size:1.5rem;margin-bottom:.8rem;display:block}
-.consult-feat h4{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.3rem}
-.consult-feat p{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.6}
+.consult-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:5rem}
+.consult-feat{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:2.5rem 2rem 2rem;text-align:center;transition:all .4s ease;border:1px solid rgba(212,165,58,.15);border-radius:4px;overflow:hidden}
+.consult-feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-2),var(--gold),transparent);opacity:.6;transition:opacity .4s}
+.consult-feat::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,165,58,.08),transparent 70%);pointer-events:none;opacity:0;transition:opacity .4s}
+.consult-feat:hover{transform:translateY(-6px);border-color:rgba(212,165,58,.35);box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.consult-feat:hover::before{opacity:1}
+.consult-feat:hover::after{opacity:1}
+.consult-feat-ico{width:52px;height:52px;margin:0 auto 1.2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(212,165,58,.12),rgba(212,165,58,.04));border:1px solid rgba(212,165,58,.25);color:var(--gold-2);transition:all .4s}
+.consult-feat:hover .consult-feat-ico{background:linear-gradient(135deg,rgba(212,165,58,.25),rgba(212,165,58,.1));border-color:var(--gold);transform:scale(1.08)}
+.consult-feat h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:.5rem;letter-spacing:.02em}
+.consult-feat p{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.7}
+/* SERVICE IMG */
+.service-visual-img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.service-visual-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(1,75,70,.55),rgba(1,40,36,.72));z-index:1}
 /* FOOTER */
-.footer{--dark:#040c0c;--teal:#0d3535;--gold:#c9a84c;background:var(--dark);padding:80px 0 0}
+.footer{background:var(--cream);border-top:1px solid rgba(1,75,70,.1);padding:80px 0 0}
 .footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
-.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(1,75,70,.1)}
 .footer-logo-wrap{display:inline-block;margin-bottom:1.5rem}
-.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block;filter:drop-shadow(0 0 1px rgba(255,255,255,.4))}
-.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:rgba(255,255,255,.3);line-height:1.8;max-width:280px;margin-bottom:2rem}
+.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:var(--muted);line-height:1.8;max-width:280px;margin-bottom:2rem}
 .footer-socials{display:flex;gap:.7rem}
-.social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .3s;border-radius:2px}
-.social-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
-.footer-top h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
+@keyframes gold-slide{0%{background-position:0% 0%}100%{background-position:200% 0%}}
+.social-link{width:40px;height:40px;border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.75rem;font-weight:700;text-decoration:none;transition:all .3s;border-radius:3px;background:#fff}
+.social-link:hover{border-color:var(--gold);color:#fff;background:linear-gradient(135deg,#C9850A,#E8B830);box-shadow:0 4px 16px rgba(212,165,58,.35);transform:translateY(-2px)}
+.footer-top h5{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:1.5rem;background:linear-gradient(90deg,#7A4E00,#D4A53A,#F4DB97,#D4A53A,#7A4E00);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gold-slide 4s linear infinite;display:inline-block}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{font-size:.84rem;color:rgba(255,255,255,.38);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.footer-links a{font-size:.84rem;color:var(--text);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
 .footer-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
-.footer-links a:hover{color:rgba(255,255,255,.75);padding-left:.3rem}.footer-links a:hover::before{width:12px}
+.footer-links a:hover{color:var(--teal);padding-left:.3rem}.footer-links a:hover::before{width:12px}
 .footer-bottom{padding:2rem 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.78rem;color:rgba(255,255,255,.2);letter-spacing:.05em}
-.footer-badge{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2)}
-.footer-bar{height:3px;background:linear-gradient(to right,var(--teal),var(--gold),var(--teal))}
+.footer-copy{font-size:.78rem;color:var(--muted);letter-spacing:.05em}
+.footer-badge{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(1,75,70,.5)}
+.footer-bar{height:3px;background:linear-gradient(to right,var(--teal),#C9850A,#F4DB97,#C9850A,var(--teal))}
 /* RESPONSIVE */
-@media(max-width:1024px){.service-grid,.service-grid.reverse{grid-template-columns:1fr;gap:3rem;direction:ltr}.footer-top{grid-template-columns:1fr 1fr;gap:3rem}.consult-features{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.page-hero{padding:130px 5% 70px}.page-hero h1{font-size:2.8rem}.service-sec{padding:80px 0}.service-big-num{font-size:7rem}.footer-top{grid-template-columns:1fr;gap:2.5rem}.footer-bottom{flex-direction:column;text-align:center}.consult-features{grid-template-columns:1fr}.hero-pills{gap:.6rem}}
-@media(max-width:520px){.page-hero h1{font-size:2.2rem}.service-title{font-size:1.8rem}.consult-inner h2{font-size:2.2rem}.consult-actions{flex-direction:column;align-items:center}}
+@media(max-width:1024px){
+  .hero-content-grid{grid-template-columns:1fr}
+  .hero-right{grid-template-columns:1fr 1fr}
+  .hero-strip{grid-template-columns:repeat(2,1fr)}
+  .why-out-header{grid-template-columns:1fr}
+  .why-out-grid{grid-template-columns:1fr}
+  .services-sec-header{grid-template-columns:1fr}
+  .svc-card{grid-template-columns:1fr}
+  .svc-card:nth-child(even){direction:ltr}
+  .svc-card-visual{min-height:280px}
+  .how-work-header{grid-template-columns:1fr}
+  .how-work-grid{grid-template-columns:1fr 1fr}
+  .how-helped-inner{grid-template-columns:1fr;gap:3rem}
+  .footer-top{grid-template-columns:1fr 1fr;gap:3rem}
+  .consult-features{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}.nav-hamburger{display:flex}
+  .page-hero{padding:110px 5% 0}
+  .page-hero h1{font-size:2rem}
+  .hero-content-grid{grid-template-columns:1fr;gap:2rem}
+  .hero-right{grid-template-columns:1fr 1fr;gap:.8rem}
+  .hero-feat{padding:1rem}
+  .hero-strip{grid-template-columns:repeat(2,1fr)}
+  .hero-stats-row{gap:1.5rem}
+  .why-out-grid{grid-template-columns:1fr}
+  .svc-card{grid-template-columns:1fr}
+  .svc-card:nth-child(even){direction:ltr}
+  .svc-card-visual{min-height:240px}
+  .svc-card-body{padding:2rem 1.5rem}
+  .svc-card-benefits{grid-template-columns:1fr}
+  .how-work-grid{grid-template-columns:1fr 1fr}
+  .how-helped-inner{grid-template-columns:1fr}
+  .helped-stats{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr;gap:2.5rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .consult-features{grid-template-columns:1fr}
+  .hero-pills{gap:.6rem}
+}
+@media(max-width:520px){
+  .page-hero h1{font-size:1.8rem}
+  .hero-right{grid-template-columns:1fr}
+  .hero-strip{grid-template-columns:1fr 1fr}
+  .svc-card-visual{min-height:200px}
+  .svc-card-body{padding:1.5rem 1.2rem}
+  .svc-card-benefits{grid-template-columns:1fr}
+  .how-work-grid{grid-template-columns:1fr}
+  .helped-stats{grid-template-columns:1fr 1fr}
+  .consult-inner h2{font-size:2rem}
+  .consult-actions{flex-direction:column;align-items:center}
+  .hero-stats-row{gap:1rem;flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-logo"><img src="../logo.png" alt="Dispatch Desk"></div>
   <ul class="mobile-menu-links" id="mobileServiceLinks">
     <li><a href="../" onclick="closeMenu()">Home</a></li>
     <li><a href="./" onclick="closeMenu()">Services</a></li>
@@ -215,21 +326,163 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <div class="hero-lines"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="hero-inner">
     <div class="breadcrumb"><a href="../">Home</a><span>&rsaquo;</span><span>Services</span></div>
-    <div class="hero-tag"><span class="hero-tag-dot"></span>What We Offer</div>
-    <h1>Premium <span class="gold">Services</span><br>Built for Growth</h1>
-    <p>From expert dispatch management to full digital transformation — a complete suite of professional services designed to help your business answer faster, operate smarter, and grow further.</p>
-    <div class="hero-pills" id="heroPills">
-      <div class="hero-pill" style="opacity:.4">Loading services&hellip;</div>
+    <div class="hero-content-grid">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-tag"><span class="hero-tag-dot"></span>UK's 24/7 Outsourced Dispatch Partner</div>
+        <h1>Peak-Hour <span class="gold">Dispatch.</span><br>Zero Overheads.<br>Round-the-Clock.</h1>
+        <p>Private hire and taxi firms across the UK trust Dispatch Desk to answer every call, book every fare, and handle peak-hour surges, all at up to 60% less than running an in-house team. No electricity bills. No payroll headaches. No missed bookings.</p>
+        <div class="hero-stats-row">
+          <div class="hero-stat-item"><strong>60%</strong><span>Cost Saving</span></div>
+          <div class="hero-stat-item"><strong>24/7</strong><span>Live Coverage</span></div>
+          <div class="hero-stat-item"><strong>6</strong><span>Platforms</span></div>
+          <div class="hero-stat-item"><strong>0</strong><span>Missed Fares</span></div>
+        </div>
+        <div class="hero-actions-row">
+          <a href="../contact/" class="btn-hero-primary">Get a Free Consultation &rarr;</a>
+          <a href="#taxi-booking" class="btn-hero-ghost">How We Work &darr;</a>
+        </div>
+        <div class="hero-pills" id="heroPills">
+          <div class="hero-pill" style="opacity:.4">Loading&hellip;</div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <div class="hero-feat">
+          <div class="hero-feat-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <h4>Peak-Hour Dispatch</h4>
+          <p>Friday surges and school-run rushes covered instantly. Extra agents scale up the moment your call volume spikes.</p>
+        </div>
+        <div class="hero-feat">
+          <div class="hero-feat-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h4>UK 24/7 Coverage</h4>
+          <p>Real human operators answering in your company's name, including nights, weekends and bank holidays.</p>
+        </div>
+        <div class="hero-feat">
+          <div class="hero-feat-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h4>Cut Electricity &amp; Overheads</h4>
+          <p>No desks, screens or servers to run. We power the dispatch room so you bank every penny saved.</p>
+        </div>
+        <div class="hero-feat">
+          <div class="hero-feat-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4>Why Only Us?</h4>
+          <p>The only UK team trained on all 6 major dispatch platforms: Autocab, iCabbi, Cab 9, Cordic, Cab Treasure &amp; TaxiCaller.</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- STATS STRIP -->
+    <div class="hero-strip">
+      <div class="hero-strip-item"><strong>60%</strong><span>Lower dispatch cost</span></div>
+      <div class="hero-strip-item"><strong>24/7</strong><span>UK taxi dispatch</span></div>
+      <div class="hero-strip-item"><strong>£0</strong><span>Electricity &amp; overheads</span></div>
+      <div class="hero-strip-item"><strong>6</strong><span>Platforms mastered</span></div>
     </div>
   </div>
 </section>
 
-<!-- DYNAMIC SERVICE SECTIONS CONTAINER -->
-<div id="servicesContainer">
-  <div class="services-loading">
-    <div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div>
+<!-- WHY OUTSOURCE -->
+<section class="why-outsource">
+  <div class="why-outsource-inner">
+    <div class="why-out-header" data-reveal="up">
+      <h2>Why Outsource Your <span class="accent">Dispatch?</span></h2>
+      <p>Running an in-house dispatch room costs far more than most operators realise. Salaries, night shifts, electricity, hardware, sick days. The meter never stops. Outsourcing to Dispatch Desk cuts that cost by up to 60% while improving coverage.</p>
+    </div>
+    <div class="why-out-grid">
+      <div class="why-out-item" data-reveal="up">
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Peak-Hour Dispatch, Covered</h3>
+        <p>Friday surges, school-run rushes, bank holidays? Our agents scale up instantly. <strong>No overtime. No extra hires.</strong> Just seamless coverage when you need it most.</p>
+      </div>
+      <div class="why-out-item" data-reveal="up">
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Zero Electricity &amp; Overheads</h3>
+        <p><strong>£0 desks. £0 servers. £0 electricity bills.</strong> We run the entire dispatch operation. You keep the profit margin that was disappearing into running costs.</p>
+      </div>
+      <div class="why-out-item" data-reveal="up">
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Why Only Dispatch Desk?</h3>
+        <p>We are the <strong>only UK team</strong> trained across all 6 major dispatch platforms. No setup fees. No long contracts. Just expert operators answering in your company's name, 24/7.</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- SERVICE CARDS -->
+<section class="services-sec-wrap">
+  <div class="services-sec-header" data-reveal="up">
+    <h2>Our <span class="accent">Services</span></h2>
+    <p>From 24/7 taxi dispatch to full digital growth, every service is built around reducing your costs, filling your fleet, and freeing your time.</p>
+  </div>
+  <div class="services-cards-grid" id="servicesContainer">
+    <div class="services-loading">
+      <div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-work-sec" id="how-we-work">
+  <div class="how-work-inner">
+    <div class="how-work-header" data-reveal="up">
+      <div>
+        <div class="sec-label">How It Works</div>
+        <h2 class="sec-title">Up and Running in <span style="color:var(--gold)">4 Simple Steps</span></h2>
+      </div>
+      <p class="sec-sub">Getting started is fast and friction-free. We plug into your existing platform and brand in days, not months.</p>
+    </div>
+    <div class="how-work-grid">
+      <div class="how-step" data-reveal="up">
+        <div class="how-step-num">01</div>
+        <div class="how-step-circle">01</div>
+        <h4>Consultation</h4>
+        <p>We learn your operation: your platform, call volumes, driver count, and peak hours.</p>
+        <div class="how-step-bar"></div>
+      </div>
+      <div class="how-step" data-reveal="up">
+        <div class="how-step-num">02</div>
+        <div class="how-step-circle">02</div>
+        <h4>Platform Setup</h4>
+        <p>We get access to your dispatch software and set up dedicated lines in your company name.</p>
+        <div class="how-step-bar"></div>
+      </div>
+      <div class="how-step" data-reveal="up">
+        <div class="how-step-num">03</div>
+        <div class="how-step-circle">03</div>
+        <h4>Agent Training</h4>
+        <p>Our operators learn your routes, drivers, and brand voice before handling a single call.</p>
+        <div class="how-step-bar"></div>
+      </div>
+      <div class="how-step" data-reveal="up">
+        <div class="how-step-num">04</div>
+        <div class="how-step-circle">04</div>
+        <h4>Go Live</h4>
+        <p>We go live. Every call answered, every fare booked, every driver dispatched, around the clock.</p>
+        <div class="how-step-bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE HELPED -->
+<section class="how-helped-sec">
+  <div class="how-helped-inner" data-reveal="up">
+    <div class="helped-content">
+      <div class="sec-label">A Real Client Result</div>
+      <h2 class="sec-title">From Missed Calls to a <span style="color:var(--gold)">Fully Booked Fleet</span></h2>
+      <blockquote>"We were losing late-night fares every weekend. Within two weeks of going live with Dispatch Desk, every call was answered and our drivers stopped sitting idle."</blockquote>
+      <p>A growing private hire firm handed us their out-of-hours and peak-hour dispatch. We took over completely with no downtime and no missed handover. Their overheads dropped, their bookings climbed.</p>
+    </div>
+    <div class="helped-stats">
+      <div class="helped-stat"><strong>0</strong><span>Missed Night Calls</span></div>
+      <div class="helped-stat"><strong>+38%</strong><span>More Completed Jobs</span></div>
+      <div class="helped-stat"><strong>60%</strong><span>Lower Dispatch Cost</span></div>
+      <div class="helped-stat"><strong>£0</strong><span>Electricity Overhead</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- CONSULT CTA -->
 <section class="consult-sec" id="consult">
@@ -239,16 +492,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <span class="consult-icon">&#9670;</span>
       <div class="consult-tag">&#9670; Free Consultation</div>
       <h2>Not Sure Which<br>Service You <span class="accent">Need?</span></h2>
-      <p>Let's have an honest conversation about your business. We'll assess your needs and recommend exactly what will drive the most growth — no pressure, no obligations.</p>
+      <p>Let's have an honest conversation about your business. We'll assess your needs and recommend exactly what will drive the most growth, with no pressure and no obligations.</p>
       <div class="consult-actions">
         <a href="../contact/" class="btn-consult">Get a Free Consultation &rarr;</a>
         <a href="tel:+441234567890" class="btn-consult-ghost">&#9742; Speak to an Expert</a>
       </div>
     </div>
     <div class="consult-features" data-reveal="up">
-      <div class="consult-feat"><span class="consult-feat-ico">&#9200;</span><h4>Response Within 2 Hours</h4><p>We'll get back to you fast with a tailored proposal</p></div>
-      <div class="consult-feat"><span class="consult-feat-ico">&#9670;</span><h4>No Obligation</h4><p>A genuine conversation about your goals — completely free</p></div>
-      <div class="consult-feat"><span class="consult-feat-ico">&#9733;</span><h4>Bespoke Recommendation</h4><p>We'll tell you exactly what will make the biggest difference</p></div>
+      <div class="consult-feat">
+        <div class="consult-feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h4>Fast Response</h4>
+        <p>We'll get back to you with a detailed proposal quickly so you can make informed decisions</p>
+      </div>
+      <div class="consult-feat">
+        <div class="consult-feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>No Obligation</h4>
+        <p>A genuine conversation about your goals, completely free with zero commitment required</p>
+      </div>
+      <div class="consult-feat">
+        <div class="consult-feat-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        <h4>Bespoke Recommendation</h4>
+        <p>We'll tell you exactly what will make the biggest difference to your operation</p>
+      </div>
     </div>
   </div>
 </section>
@@ -259,8 +524,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
     <div class="footer-top">
       <div data-reveal="up">
         <span class="footer-logo-wrap"><img src="../logo.png" alt="Dispatch Desk" class="footer-logo"></span>
-        <p class="footer-tagline">"We Answer. We Dispatch. You Grow." Premium dispatch and customer support trusted by businesses worldwide.</p>
-        <div class="footer-socials"><a href="#" class="social-link">in</a><a href="#" class="social-link">tw</a><a href="#" class="social-link">fb</a><a href="#" class="social-link">ig</a></div>
+        <p class="footer-tagline"><span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;font-weight:700;background:linear-gradient(90deg,#7A4E00,#D4A53A,#F4DB97,#D4A53A,#7A4E00);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gold-slide 4s linear infinite;display:block;margin-bottom:.6rem">"We Answer. We Dispatch. You Grow."</span>Premium dispatch and customer support trusted by businesses worldwide.</p>
+        <div class="footer-socials"><a href="https://www.linkedin.com/company/126883983" target="_blank" rel="noopener" class="social-link">in</a><a href="https://www.facebook.com/profile.php?id=61590507331587" target="_blank" rel="noopener" class="social-link">fb</a><a href="https://www.instagram.com/ddesk260/" target="_blank" rel="noopener" class="social-link">ig</a></div>
       </div>
       <div data-reveal="up">
         <h5>Services</h5>
@@ -273,11 +538,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <div data-reveal="up">
         <h5>Company</h5>
         <ul class="footer-links"><li><a href="../#about">About Us</a></li><li><a href="../#process">Our Process</a></li><li><a href="../#why-us">Why Choose Us</a></li><li><a href="../#testimonials">Client Stories</a></li></ul>
-        <div style="margin-top:2rem"><h5>Contact</h5><p style="font-size:.82rem;color:rgba(255,255,255,.3);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p></div>
+        <div style="margin-top:2rem"><h5>Contact</h5><p style="font-size:.82rem;color:var(--text);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2025 Dispatch Desk. All rights reserved.</span>
+      <span class="footer-copy">&copy; 2026 Dispatch Desk. All rights reserved.</span>
       <span class="footer-badge">We Answer &bull; We Dispatch &bull; You Grow</span>
     </div>
   </div>
@@ -334,40 +599,26 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
     },{passive:true});
   }
 
-  /* BUILD SERVICE SECTION HTML */
-  function buildSection(s,index){
-    var isRev=index%2!==0;
-    var platforms=s.platforms?s.platforms.map(function(p){return'<span class="platform-tag">'+p+'</span>'}).join(''):'';
-    var stats=s.stats.map(function(st,si){return'<div class="visual-stat '+(si===0?'vs-top-right':'vs-bottom-left')+'"><span class="visual-stat-n">'+st.value+'</span><span class="visual-stat-l">'+st.label+'</span></div>'}).join('');
-    var benefits=s.benefits.map(function(b){return'<li class="service-benefit"><div class="benefit-check">&#10003;</div><div class="benefit-text"><strong>'+b.title+'</strong><span>'+b.description+'</span></div></li>'}).join('');
-    return '<section class="service-sec" id="'+s.id+'">'
-      +'<div class="service-divider"></div>'
-      +'<div class="service-inner">'
-      +'<div class="service-grid'+(isRev?' reverse':'')+'">'
-      +'<div class="service-visual" data-reveal="'+(isRev?'right':'left')+'">'
-      +'<div class="service-visual-box">'
-      +'<div class="vis-circle vis-circle-1"></div>'
-      +'<div class="vis-circle vis-circle-2"></div>'
-      +'<div class="service-icon-wrap"><div class="service-main-icon">'+s.icon+'</div><div class="service-icon-label">'+s.title+'</div></div>'
-      +stats
-      +'<div class="service-big-num">'+s.number+'</div>'
+  /* BUILD SERVICE CARD */
+  function buildCard(s){
+    var benefits=s.benefits.slice(0,4).map(function(b){return'<li>'+b.title+'</li>'}).join('');
+    var stats=s.stats.map(function(st){return'<div class="svc-card-stat"><strong>'+st.value+'</strong><span>'+st.label+'</span></div>'}).join('');
+    return '<div class="svc-card" id="'+s.id+'" data-reveal="up">'
+      +'<div class="svc-card-visual">'
+      +(s.image?'<img src="'+s.image+'" alt="'+s.title+'" loading="lazy">':'')
+      +'<div class="svc-card-visual-overlay"></div>'
+      +'<div class="svc-card-visual-num">'+s.number+'</div>'
+      +'<div class="svc-card-visual-tag">'+s.subtitle+'</div>'
       +'</div>'
-      +'<div class="service-visual-accent"></div>'
-      +'<div class="service-visual-corner"></div>'
-      +(platforms?'<div class="service-platforms">'+platforms+'</div>':'')
+      +'<div class="svc-card-body">'
+      +'<h3 class="svc-card-title">'+s.title+'</h3>'
+      +'<p class="svc-card-tagline">'+s.tagline+'</p>'
+      +'<p class="svc-card-desc">'+s.shortDescription+'</p>'
+      +'<ul class="svc-card-benefits">'+benefits+'</ul>'
+      +'<div class="svc-card-stats">'+stats+'</div>'
+      +'<a href="../contact/" class="svc-card-cta">'+s.cta+' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>'
       +'</div>'
-      +'<div class="service-content" data-reveal="'+(isRev?'left':'right')+'">'
-      +'<span class="service-num-label">Service &mdash; '+s.number+'</span>'
-      +'<div class="service-tag">'+s.subtitle+'</div>'
-      +'<h2 class="service-title">'+s.title+'</h2>'
-      +'<div class="service-divider-line"></div>'
-      +'<p class="service-desc">'+s.fullDescription+'</p>'
-      +'<ul class="service-benefits">'+benefits+'</ul>'
-      +'<a href="../contact/" class="service-cta"><span>'+s.cta+'</span><span class="service-cta-arrow">&rarr;</span></a>'
-      +'</div>'
-      +'</div>'
-      +'</div>'
-      +'</section>';
+      +'</div>';
   }
 
   /* FETCH & RENDER */
@@ -379,8 +630,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       var heroPills=document.getElementById('heroPills');
       var footerLinks=document.getElementById('footerServiceLinks');
 
-      /* Build sections */
-      container.innerHTML=services.map(function(s,i){return buildSection(s,i)}).join('');
+      /* Build cards */
+      container.innerHTML=services.map(function(s){return buildCard(s)}).join('');
 
       /* Hero pills */
       heroPills.innerHTML=services.map(function(s){
