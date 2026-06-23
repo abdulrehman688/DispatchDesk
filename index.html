@@ -212,15 +212,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .why-card p{font-size:.86rem;color:var(--text);line-height:1.85;opacity:.8}
 /* TESTIMONIALS */
 .test-sec{background:var(--cream)}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,.05);margin-top:3.5rem}
-.test-card{background:#fff;padding:3rem;position:relative;transition:all .4s;overflow:hidden}
-.test-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold-pale);transition:background .4s}
-.test-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(13,53,53,.1)}.test-card:hover::before{background:var(--gold)}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3.5rem}
+.test-card{background:#fff;padding:2.8rem;position:relative;transition:all .4s;overflow:hidden;border:1px solid rgba(1,75,70,.06);border-radius:4px}
+.test-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-2),var(--gold));opacity:.6;transition:opacity .4s}
+.test-card::after{content:'\201C';position:absolute;top:1.2rem;right:1.8rem;font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(212,165,58,.1);line-height:1;pointer-events:none}
+.test-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(13,53,53,.1);border-color:rgba(212,165,58,.2)}.test-card:hover::before{opacity:1}
 .test-stars{display:flex;gap:3px;margin-bottom:1.5rem}
 .test-star{color:var(--gold);font-size:.9rem}
-.test-quote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--teal);line-height:1.85;margin-bottom:2rem}
+.test-quote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--teal);line-height:1.85;margin-bottom:2rem}
 .test-author{display:flex;align-items:center;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--gold-pale)}
-.test-av{width:42px;height:42px;min-width:42px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--gold-2)}
+.test-av{width:48px;height:48px;min-width:48px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:var(--gold-2);border:2px solid rgba(212,165,58,.25)}
 .test-name{font-size:.9rem;font-weight:600;color:var(--teal);display:block}
 .test-role{font-size:.78rem;color:var(--muted);margin-top:.15rem;display:block}
 /* GROW */
@@ -483,14 +484,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           </div>
         </div>
         <div class="quote-block">
-          <p>"We don't just answer calls and manage dispatches  we become an extension of your team, elevating every customer touchpoint while driving measurable, sustained growth."</p>
+          <p>"We don't just answer calls and manage dispatches, we become an extension of your team, elevating every customer touchpoint while driving measurable, sustained growth."</p>
           <div class="quote-bar"></div>
-        </div>
-        <div class="metrics-grid">
-          <div class="metric-cell"><span class="metric-n" data-count="7">+0</span><span class="metric-l">Happy Clients</span></div>
-          <div class="metric-cell"><span class="metric-n" data-count="10">+0</span><span class="metric-l">Years of Experience</span></div>
-          <div class="metric-cell"><span class="metric-n" data-count="98">0%</span><span class="metric-l">Success Rate</span></div>
-          <div class="metric-cell"><span class="metric-n">24/7</span><span class="metric-l">Availability</span></div>
         </div>
       </div>
     </div>
@@ -500,9 +495,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 <!-- STATS -->
 <div class="stats-stripe">
   <div class="stats-strip-inner">
-    <div class="strip-stat" data-reveal="up"><span class="strip-n" data-count="7">0+</span><span class="strip-l">Happy Clients</span></div>
-    <div class="strip-stat" data-reveal="up"><span class="strip-n" data-count="10">0+</span><span class="strip-l">Years of Experience</span></div>
-    <div class="strip-stat" data-reveal="up"><span class="strip-n" data-count="98">0%</span><span class="strip-l">Success Rate</span></div>
+    <div class="strip-stat" data-reveal="up"><span class="strip-n" data-count="3">0+</span><span class="strip-l">Happy Clients</span></div>
+    <div class="strip-stat" data-reveal="up"><span class="strip-n" data-count="5">0+</span><span class="strip-l">Years of Experience</span></div>
+    <div class="strip-stat" data-reveal="up"><span class="strip-n" data-count="90">0%</span><span class="strip-l">Success Rate</span></div>
     <div class="strip-stat" data-reveal="up"><span class="strip-n">24/7</span><span class="strip-l">Availability</span></div>
   </div>
 </div>
@@ -705,9 +700,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <div class="divider divider-center"></div>
     </div>
     <div class="test-grid">
-      <div class="test-card" data-reveal="up"><div class="test-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div><p class="test-quote">"Dispatch Desk completely transformed our operations. Their professionalism and round-the-clock availability have been a genuine game-changer for our business."</p><div class="test-author"><div class="test-av">AH</div><div><span class="test-name">Ahmed Hassan</span><span class="test-role">Operations Manager, TechFlow Ltd</span></div></div></div>
-      <div class="test-card" data-reveal="up"><div class="test-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div><p class="test-quote">"From day one the team felt like an extension of our own. Their iCabbi expertise is exceptional and their response times are consistently outstanding."</p><div class="test-author"><div class="test-av">FK</div><div><span class="test-name">Fatima Khan</span><span class="test-role">CEO, Rapid Logistics</span></div></div></div>
-      <div class="test-card" data-reveal="up"><div class="test-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div><p class="test-quote">"The level of expertise and dedication is unmatched. We've scaled 3x since partnering with Dispatch Desk without any dip in service quality whatsoever."</p><div class="test-author"><div class="test-av">MR</div><div><span class="test-name">Michael Roberts</span><span class="test-role">Director, CityRide Solutions</span></div></div></div>
+      <div class="test-card" data-reveal="up">
+        <div class="test-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
+        <p class="test-quote">"Dispatch Desk completely transformed our operations. Their professionalism and round-the-clock availability have been a genuine game-changer for our business. We haven't missed a single booking since they took over."</p>
+        <div class="test-author"><div class="test-av">AH</div><div><span class="test-name">Ahmed Hassan</span><span class="test-role">Operations Manager, TechFlow Ltd</span></div></div>
+      </div>
+      <div class="test-card" data-reveal="up">
+        <div class="test-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
+        <p class="test-quote">"From day one the team felt like an extension of our own. Their iCabbi expertise is exceptional and their response times are consistently outstanding. We've cut our dispatch costs by over half."</p>
+        <div class="test-author"><div class="test-av">FK</div><div><span class="test-name">Fatima Khan</span><span class="test-role">CEO, Rapid Logistics</span></div></div>
+      </div>
     </div>
   </div>
 </section>

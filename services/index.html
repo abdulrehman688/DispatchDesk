@@ -74,6 +74,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,4rem);font-weight:600;color:var(--dark);line-height:1.1;margin-bottom:1.2rem;opacity:0;animation:aUp .9s ease .4s forwards}
 .page-hero h1 .gold{background:linear-gradient(135deg,#C9950E 0%,#E8B830 45%,#C9950E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-hero p{font-size:.95rem;color:var(--text);line-height:1.95;opacity:0;animation:aUp .9s ease .6s forwards;margin-bottom:1.8rem}
+.hero-highlight{color:var(--teal);font-weight:700;background:linear-gradient(120deg,rgba(212,165,58,.15) 0%,rgba(212,165,58,.08) 100%);padding:.1em .45em;border-radius:2px;border-bottom:2px solid var(--gold);white-space:nowrap}
 .hero-stats-row{display:flex;gap:2.5rem;margin-bottom:2rem;opacity:0;animation:aUp .9s ease .7s forwards}
 .hero-stat-item strong{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--teal);display:block;line-height:1}
 .hero-stat-item span{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
@@ -116,12 +117,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .why-out-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:600;color:#fff;line-height:1.15}
 .why-out-header h2 .accent{color:var(--gold-2)}
 .why-out-header p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.9}
-.why-out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
-.why-out-item{background:rgba(1,55,50,.6);padding:2.4rem 2rem;transition:background .3s}
-.why-out-item:hover{background:rgba(255,255,255,.06)}
-.why-out-ico{width:46px;height:46px;background:rgba(212,165,58,.15);border:1px solid rgba(212,165,58,.3);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;color:var(--gold)}
-.why-out-item h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;margin-bottom:.7rem}
-.why-out-item p{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.85}
+.why-out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.why-out-item{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02));padding:2.2rem 1.8rem;transition:all .4s;border:1px solid rgba(212,165,58,.12);border-radius:4px;position:relative;overflow:hidden}
+.why-out-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-2),var(--gold),transparent);opacity:.5;transition:opacity .4s}
+.why-out-item:hover{transform:translateY(-5px);border-color:rgba(212,165,58,.3);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+.why-out-item:hover::before{opacity:1}
+.why-out-ico{width:46px;height:46px;background:rgba(212,165,58,.12);border:1px solid rgba(212,165,58,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;color:var(--gold-2);transition:all .4s}
+.why-out-item:hover .why-out-ico{background:rgba(212,165,58,.2);border-color:var(--gold);transform:scale(1.06)}
+.why-out-item h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:.6rem}
+.why-out-item p{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.8}
 .why-out-item strong{color:var(--gold-2)}
 /* SERVICE CARDS */
 .services-sec-wrap{background:var(--cream);padding:80px 5% 0}
@@ -244,7 +248,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   .hero-right{grid-template-columns:1fr 1fr}
   .hero-strip{grid-template-columns:repeat(2,1fr)}
   .why-out-header{grid-template-columns:1fr}
-  .why-out-grid{grid-template-columns:1fr}
+  .why-out-grid{grid-template-columns:1fr 1fr}
   .services-sec-header{grid-template-columns:1fr}
   .svc-card{grid-template-columns:1fr}
   .svc-card:nth-child(even){direction:ltr}
@@ -332,7 +336,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <div class="hero-left">
         <div class="hero-tag"><span class="hero-tag-dot"></span>UK's 24/7 Outsourced Dispatch Partner</div>
         <h1>Peak-Hour <span class="gold">Dispatch.</span><br>Zero Overheads.<br>Round-the-Clock.</h1>
-        <p>Private hire and taxi firms across the UK trust Dispatch Desk to answer every call, book every fare, and handle peak-hour surges, all at up to 60% less than running an in-house team. No electricity bills. No payroll headaches. No missed bookings.</p>
+        <p>Private hire and taxi firms across the UK trust Dispatch Desk to answer every call, book every fare, and handle peak-hour surges, all at up to 60% less than running an in-house team. <strong class="hero-highlight">No electricity bills.</strong> <strong class="hero-highlight">No payroll headaches.</strong> <strong class="hero-highlight">No missed bookings.</strong></p>
         <div class="hero-stats-row">
           <div class="hero-stat-item"><strong>60%</strong><span>Cost Saving</span></div>
           <div class="hero-stat-item"><strong>24/7</strong><span>Live Coverage</span></div>
@@ -387,24 +391,39 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 <section class="why-outsource">
   <div class="why-outsource-inner">
     <div class="why-out-header" data-reveal="up">
-      <h2>Why Outsource Your <span class="accent">Dispatch?</span></h2>
-      <p>Running an in-house dispatch room costs far more than most operators realise. Salaries, night shifts, electricity, hardware, sick days. The meter never stops. Outsourcing to Dispatch Desk cuts that cost by up to 60% while improving coverage.</p>
+      <h2>Why Choose <span class="accent">Us?</span></h2>
+      <p>We don't just provide a service, we become part of your team. Here's what sets Dispatch Desk apart from every other outsourcing provider in the UK.</p>
     </div>
     <div class="why-out-grid">
       <div class="why-out-item" data-reveal="up">
-        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h3>Peak-Hour Dispatch, Covered</h3>
-        <p>Friday surges, school-run rushes, bank holidays? Our agents scale up instantly. <strong>No overtime. No extra hires.</strong> Just seamless coverage when you need it most.</p>
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Dedicated Operators</h3>
+        <p>Your own team of trained professionals who know your business inside out. They answer in your company's name and follow your exact processes.</p>
+      </div>
+      <div class="why-out-item" data-reveal="up">
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Flexible Coverage</h3>
+        <p>Scale up during peak hours and scale down when it's quiet. No fixed headcount, no overtime bills. You only pay for what you need, when you need it.</p>
+      </div>
+      <div class="why-out-item" data-reveal="up">
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Personalized Onboarding</h3>
+        <p>We learn your routes, your drivers, your brand voice, and your platform before handling a single call. Every detail is covered before we go live.</p>
+      </div>
+      <div class="why-out-item" data-reveal="up">
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>24/7 Operational Support</h3>
+        <p>Round-the-clock coverage including nights, weekends, and bank holidays. Your business never sleeps and neither do we.</p>
       </div>
       <div class="why-out-item" data-reveal="up">
         <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>Zero Electricity &amp; Overheads</h3>
-        <p><strong>£0 desks. £0 servers. £0 electricity bills.</strong> We run the entire dispatch operation. You keep the profit margin that was disappearing into running costs.</p>
+        <h3>Cost Effective</h3>
+        <p>Save up to 60% compared to running an in-house team. No desks, no servers, no electricity bills. You keep the margin that was going into overheads.</p>
       </div>
       <div class="why-out-item" data-reveal="up">
-        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Why Only Dispatch Desk?</h3>
-        <p>We are the <strong>only UK team</strong> trained across all 6 major dispatch platforms. No setup fees. No long contracts. Just expert operators answering in your company's name, 24/7.</p>
+        <div class="why-out-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>24/7 Power &amp; Internet Backup</h3>
+        <p>Our operations run on dedicated power and internet backup systems. Even if your local infrastructure goes down, your dispatch keeps running without interruption.</p>
       </div>
     </div>
   </div>

@@ -3,12 +3,12 @@
     {
       "id": "taxi-booking",
       "number": "01",
-      "icon": "\ud83d\ude96",
+      "icon": "🚖",
       "image": "https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=800&q=80",
-      "title": "Taxi Booking Services",
+      "title": "Taxi Booking & Dispatch",
       "subtitle": "Dispatch Management",
       "tagline": "Never miss a fare again",
-      "shortDescription": "Professional 24/7 taxi booking and dispatch management for private hire companies across all major platforms.",
+      "shortDescription": "Our trained UK-based operators handle every incoming call, manage real-time bookings, and coordinate driver dispatch across all 6 major platforms, 24 hours a day, 7 days a week. Whether it's a Friday night surge, a school-run rush, or a quiet bank holiday shift, your phones are always answered in your company's name. We plug directly into your existing dispatch software so there's zero disruption and zero missed fares.",
       "fullDescription": "We provide professional, round-the-clock taxi booking and dispatch management for private hire and taxi companies. Our trained operators work directly within your chosen platform, handling every call, booking, and dispatch with speed and precision so you never miss a fare.",
       "stats": [
         {
@@ -26,12 +26,12 @@
         "Cab 9",
         "Cordic",
         "Cab Treasure",
-        "Data Master"
+        "TaxiCaller"
       ],
       "benefits": [
         {
           "title": "Zero Missed Bookings",
-          "description": "Every incoming call answered promptly, every booking captured and dispatched correctly"
+          "description": "Every incoming call answered, every booking captured and dispatched correctly"
         },
         {
           "title": "24/7 Live Operator Coverage",
@@ -39,32 +39,24 @@
         },
         {
           "title": "Multi-Platform Certified",
-          "description": "Expert operators across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and Data Master"
+          "description": "Expert operators across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and TaxiCaller"
         },
         {
-          "title": "Driver Coordination",
-          "description": "Efficient allocation and real-time communication with your driver fleet"
-        },
-        {
-          "title": "Surge & Peak Management",
+          "title": "Peak & Surge Management",
           "description": "Scaled capacity during busy periods to maintain service quality at all times"
-        },
-        {
-          "title": "Detailed Reporting",
-          "description": "Regular performance reports covering call volumes, bookings and response times"
         }
       ],
-      "cta": "Book a Free Consultation"
+      "cta": "Book a Free Trial"
     },
     {
       "id": "customer-support",
       "number": "02",
-      "icon": "\ud83c\udfa7",
+      "icon": "🎧",
       "image": "https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=800&q=80",
       "title": "Customer Support",
       "subtitle": "Support Excellence",
       "tagline": "Your brand, our voice",
-      "shortDescription": "Dedicated inbound and outbound support agents representing your brand professionally across every communication channel.",
+      "shortDescription": "Our dedicated support agents represent your brand with professionalism and care across every channel including phone, email, live chat, WhatsApp, and social media. From handling inbound enquiries and resolving complaints to proactive outreach and customer retention, we deliver a seamless experience that builds loyalty and keeps your customers coming back. Every agent is trained on your tone, scripts, and brand values.",
       "fullDescription": "Our dedicated support agents represent your brand with professionalism and care across every channel. From inbound call handling to complaint resolution and proactive outreach, we deliver a seamless customer experience that builds loyalty and drives retention.",
       "stats": [
         {
@@ -99,14 +91,6 @@
         {
           "title": "Complaint Resolution",
           "description": "Structured escalation processes that turn complaints into loyalty-building moments"
-        },
-        {
-          "title": "Customer Retention Focus",
-          "description": "Proactive strategies to reduce churn and increase long-term customer value"
-        },
-        {
-          "title": "Monthly Performance Reviews",
-          "description": "Full analytics on CSAT scores, handle times, resolution rates and more"
         }
       ],
       "cta": "Book a Free Consultation"
@@ -114,12 +98,12 @@
     {
       "id": "digital-marketing",
       "number": "03",
-      "icon": "\ud83d\udcc8",
+      "icon": "📈",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
       "title": "Digital Marketing",
       "subtitle": "Digital Growth",
       "tagline": "Grow your online presence",
-      "shortDescription": "From SEO and paid ads to social media management, we build your brand authority and drive measurable leads.",
+      "shortDescription": "From search engine optimisation and Google Ads to social media management and content strategy, our digital marketing team builds your brand authority and generates quality leads that convert. We run data-driven campaigns across Google, Meta, Instagram, LinkedIn, and more, with full transparency on spend, results, and ROI. Every pound you invest is tracked, reported, and optimised for maximum return.",
       "fullDescription": "From search engine dominance to high-converting paid campaigns, our digital marketing team drives measurable growth for your business online. We build your brand authority, generate quality leads, and turn browsers into loyal customers, all with transparent ROI reporting.",
       "stats": [
         {
@@ -140,11 +124,11 @@
       ],
       "benefits": [
         {
-          "title": "Search Engine Optimisation (SEO)",
+          "title": "Search Engine Optimisation",
           "description": "On-page, off-page and technical SEO to rank higher and attract organic traffic"
         },
         {
-          "title": "Google & Meta Paid Advertising",
+          "title": "Google & Meta Advertising",
           "description": "Data-driven ad campaigns that deliver maximum return on every pound spent"
         },
         {
@@ -152,29 +136,21 @@
           "description": "Consistent, engaging content across Instagram, Facebook, LinkedIn and more"
         },
         {
-          "title": "Content Creation & Strategy",
-          "description": "Professional copy, graphics and video content crafted to convert and engage"
-        },
-        {
-          "title": "Email Marketing Campaigns",
-          "description": "Targeted email sequences that nurture leads and drive repeat business"
-        },
-        {
           "title": "Analytics & ROI Reporting",
           "description": "Monthly dashboards showing exactly how your marketing investment is performing"
         }
       ],
-      "cta": "Book a Free Consultation"
+      "cta": "Get a Free Market Audit"
     },
     {
       "id": "web-development",
       "number": "04",
-      "icon": "\ud83d\udcbb",
+      "icon": "💻",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
       "title": "Web Development",
       "subtitle": "Digital Presence",
       "tagline": "Websites that convert",
-      "shortDescription": "Custom mobile-first websites, e-commerce platforms and booking systems built to perform and convert visitors into customers.",
+      "shortDescription": "We design and build premium websites that don't just look exceptional, they perform. From landing pages and corporate sites to full e-commerce platforms and custom booking systems, every project is built mobile-first, SEO-optimised, and engineered to convert visitors into paying customers. We handle everything from design to deployment and provide ongoing support and maintenance so your site stays fast, secure, and up to date.",
       "fullDescription": "We design and build premium websites that don't just look exceptional, they perform. From landing pages to full e-commerce platforms and custom booking systems, every project is built mobile-first, SEO-optimised, and engineered to convert visitors into customers.",
       "stats": [
         {
@@ -196,7 +172,7 @@
       "benefits": [
         {
           "title": "Custom Website Design",
-          "description": "Bespoke, brand-aligned designs built to reflect your identity and impress your audience"
+          "description": "Brand-aligned designs built to reflect your identity and impress your audience"
         },
         {
           "title": "Mobile-First Development",
@@ -207,29 +183,21 @@
           "description": "Fully integrated online stores and booking platforms built to drive conversions"
         },
         {
-          "title": "Speed & Performance Optimised",
+          "title": "Speed & SEO Optimised",
           "description": "Fast-loading pages that improve user experience and search engine rankings"
-        },
-        {
-          "title": "SEO-Ready from Day One",
-          "description": "Built with technical SEO best practices baked in from the very first line of code"
-        },
-        {
-          "title": "Ongoing Support & Maintenance",
-          "description": "We don't disappear after launch. Ongoing support keeps your site secure and updated"
         }
       ],
-      "cta": "Book a Free Consultation"
+      "cta": "Get a Quote"
     },
     {
       "id": "restaurant-operations",
       "number": "05",
-      "icon": "\ud83c\udf7d\ufe0f",
+      "icon": "🍽️",
       "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80",
       "title": "Restaurant Operations",
       "subtitle": "Operations Management",
       "tagline": "Smoother operations, happier customers",
-      "shortDescription": "Full operational support for restaurants including order management, reservations, delivery coordination and customer communication.",
+      "shortDescription": "We take the operational pressure off your restaurant team by managing all customer-facing communications professionally. From taking phone orders and handling table reservations to coordinating deliveries and resolving customer queries, our agents keep your front-of-house running smoothly around the clock. We train on your menu, your tone, and your brand values so every customer interaction feels like it came from your own team.",
       "fullDescription": "We take the operational pressure off your restaurant team by managing your customer-facing communications professionally. From taking phone orders and handling reservations to coordinating deliveries and resolving customer queries, we keep your front-of-house running smoothly so you can focus on the kitchen.",
       "stats": [
         {
@@ -261,19 +229,11 @@
           "description": "Driver and courier communication to ensure on-time delivery and happy customers"
         },
         {
-          "title": "Customer Query Resolution",
-          "description": "Dietary queries, order amendments and complaints, all handled with care and speed"
-        },
-        {
           "title": "Peak Hour Overflow Support",
           "description": "Extra capacity during busy periods so no call or order ever goes unanswered"
-        },
-        {
-          "title": "Brand Voice Consistency",
-          "description": "Agents trained on your menu, tone and values to represent your restaurant perfectly"
         }
       ],
-      "cta": "Book a Free Consultation"
+      "cta": "Explore 24/7 Restaurant Support"
     }
   ]
 }
