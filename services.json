@@ -12,12 +12,12 @@
       "fullDescription": "We provide professional, round-the-clock taxi booking and dispatch management for private hire and taxi companies. Our trained operators work directly within your chosen platform, handling every call, booking, and dispatch with speed and precision so you never miss a fare.",
       "stats": [
         {
-          "value": "24/7",
-          "label": "Live Dispatch"
+          "value": "+34%",
+          "label": "Booking Conversion Uplift"
         },
         {
-          "value": "All",
-          "label": "Major Platforms"
+          "value": "-70%",
+          "label": "Operational Cost"
         }
       ],
       "platforms": [
@@ -30,16 +30,16 @@
       ],
       "benefits": [
         {
-          "title": "Every Call Answered",
-          "description": "Incoming calls handled promptly, bookings captured and dispatched correctly around the clock"
-        },
-        {
           "title": "24/7 Live Operator Coverage",
           "description": "Real human agents available around the clock, including nights, weekends and holidays"
         },
         {
-          "title": "Multi-Platform Certified",
-          "description": "Expert operators across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and TaxiCaller"
+          "title": "Passenger Communication",
+          "description": "Direct coordination with passengers for pickups, ETAs, and ride updates in your company's name"
+        },
+        {
+          "title": "10s Response",
+          "description": "Every incoming call answered within 10 seconds so no fare slips through the cracks"
         },
         {
           "title": "Peak & Surge Management",
@@ -77,12 +77,12 @@
       ],
       "benefits": [
         {
-          "title": "Inbound & Outbound Handling",
-          "description": "Full call management covering enquiries, complaints, follow-ups and everything in between"
+          "title": "Live Chat Support",
+          "description": "Real-time chat agents handling customer queries instantly across your website and apps"
         },
         {
-          "title": "Multi-Channel Support",
-          "description": "Phone, email, live chat, WhatsApp and social media, all professionally managed"
+          "title": "Email Support Hub",
+          "description": "Dedicated email management for enquiries, follow-ups, and ticket resolution"
         },
         {
           "title": "Brand-Aligned Communication",
@@ -201,12 +201,12 @@
       "fullDescription": "We take the operational pressure off your restaurant team by managing your customer-facing communications professionally. From taking phone orders and handling reservations to coordinating deliveries and resolving customer queries, we keep your front-of-house running smoothly so you can focus on the kitchen.",
       "stats": [
         {
-          "value": "24/7",
-          "label": "Order Handling"
+          "value": "0",
+          "label": "Missed Peak Orders"
         },
         {
-          "value": "24/7",
-          "label": "Order Handling"
+          "value": "90%+",
+          "label": "Order Accuracy Rate"
         }
       ],
       "platforms": [
@@ -221,8 +221,8 @@
           "description": "Professional agents handle every call, capturing orders accurately and efficiently"
         },
         {
-          "title": "Table Reservation Management",
-          "description": "Seamless booking management across phone, online and third-party platforms"
+          "title": "Complaint Resolution",
+          "description": "Professional handling of customer complaints with structured escalation and follow-up"
         },
         {
           "title": "Delivery Coordination",
