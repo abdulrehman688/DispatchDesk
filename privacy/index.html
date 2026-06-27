@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../logo.png">
+<link rel="apple-touch-icon" href="../logo.png">
+<title>Privacy Policy — Dispatch Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#014B46;--teal-2:#065E57;--gold:#D4A53A;--gold-2:#E6C36A;--gold-3:#F4DB97;
+  --cream:#F6F2ED;--dark:#003A35;--text:#1F3B38;--muted:#5a7a7a;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* NAV */
+.nav{position:fixed;top:0;width:100%;z-index:9999;transition:all .4s ease}
+.nav.scrolled{background:rgba(246,242,237,.97);backdrop-filter:blur(24px);box-shadow:0 2px 16px rgba(0,0,0,.08)}
+.nav-inner{max-width:1220px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:94px}
+.nav-logo{display:inline-flex;align-items:center}
+.nav-logo img{height:84px;object-fit:contain;transition:transform .3s}
+.nav-logo:hover img{transform:scale(1.04)}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{color:var(--teal);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold-2);transition:width .35s ease}
+.nav-links a:hover{color:var(--gold-2)}
+.nav-links a:hover::after{width:100%}
+.nav-cta-btn{background:var(--gold)!important;color:var(--teal)!important;padding:.5rem 1.4rem!important;font-weight:600!important;border-radius:2px;transition:background .3s,transform .3s!important}
+.nav-cta-btn::after{display:none!important}
+.nav-cta-btn:hover{background:var(--gold-2)!important;transform:translateY(-2px)!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:10001}
+.nav-hamburger span{display:block;width:26px;height:2px;background:var(--gold);border-radius:2px;transition:all .4s cubic-bezier(.23,1,.32,1)}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;background:var(--teal);z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:transform .55s cubic-bezier(.77,0,.175,1);pointer-events:none}
+.mobile-menu.open{transform:translateX(0);pointer-events:all}
+.mobile-menu-logo{position:absolute;top:1.5rem;left:5%;opacity:.1}
+.mobile-menu-logo img{height:60px}
+.mobile-menu-links{list-style:none;text-align:center;width:100%}
+.mobile-menu-links li{border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+.mobile-menu-links a{display:block;padding:1.4rem 2rem;font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.05em;transition:all .35s;position:relative}
+.mobile-menu-links a::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .3s}
+.mobile-menu-links a:hover{color:var(--gold-2);padding-left:3rem}
+.mobile-menu-links a:hover::before{transform:scaleY(1)}
+.mobile-menu-links li{transform:translateX(60px);opacity:0;transition:transform .5s ease,opacity .5s ease}
+.mobile-menu.open li:nth-child(1){transform:none;opacity:1;transition-delay:.1s}
+.mobile-menu.open li:nth-child(2){transform:none;opacity:1;transition-delay:.15s}
+.mobile-menu.open li:nth-child(3){transform:none;opacity:1;transition-delay:.2s}
+.mobile-menu-bottom{position:absolute;bottom:3rem;text-align:center}
+.mobile-menu-bottom a{display:inline-block;background:var(--gold);color:var(--teal);padding:.9rem 2.5rem;font-weight:700;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;margin-bottom:1.2rem}
+.mobile-menu-tagline{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+
+/* HERO */
+.page-hero{padding:160px 5% 80px;background:linear-gradient(135deg,var(--cream) 0%,#edf4f3 60%,var(--cream) 100%);position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(1,75,70,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(1,75,70,.04) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{display:flex;align-items:center;gap:.6rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(1,75,70,.4);margin-bottom:1.8rem}
+.breadcrumb a{color:rgba(1,75,70,.4);text-decoration:none;transition:color .3s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:var(--gold)}
+.hero-tag{display:inline-flex;align-items:center;gap:.7rem;border:1px solid rgba(1,75,70,.18);padding:.4rem 1rem;border-radius:2px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
+.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:600;color:var(--dark);line-height:1.1;margin-bottom:1rem}
+.page-hero .meta{font-size:.82rem;color:var(--muted);letter-spacing:.05em}
+
+/* CONTENT */
+.policy-sec{padding:80px 0 120px}
+.policy-inner{max-width:800px;margin:0 auto;padding:0 5%}
+.policy-block{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(1,75,70,.08)}
+.policy-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.policy-block h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.policy-block h2::before{content:'';display:inline-block;width:3px;height:1.2em;background:var(--gold);flex-shrink:0;border-radius:1px}
+.policy-block p{font-size:.95rem;color:var(--text);line-height:1.95;margin-bottom:.9rem}
+.policy-block p:last-child{margin-bottom:0}
+.policy-block ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem}
+.policy-block ul li{font-size:.95rem;color:var(--text);line-height:1.7;padding-left:1.4rem;position:relative}
+.policy-block ul li::before{content:'';position:absolute;left:0;top:.65em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.policy-block a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(1,75,70,.2);transition:border-color .3s,color .3s}
+.policy-block a:hover{color:var(--gold);border-color:var(--gold)}
+.policy-note{background:rgba(1,75,70,.04);border-left:3px solid var(--gold);padding:1.2rem 1.5rem;border-radius:0 4px 4px 0;margin-top:1rem}
+.policy-note p{margin:0;font-size:.88rem;color:var(--muted)}
+
+/* FOOTER */
+@keyframes gold-slide{0%{background-position:200% center}100%{background-position:-200% center}}
+.footer{background:var(--cream);border-top:1px solid rgba(1,75,70,.1);padding:80px 0 0}
+.footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(1,75,70,.1)}
+.footer-logo-wrap{display:inline-block;margin-bottom:1.5rem}
+.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:var(--muted);line-height:1.8;max-width:280px;margin-bottom:2rem}
+.footer-socials{display:flex;gap:.7rem}
+.social-link{width:40px;height:40px;border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.75rem;font-weight:700;text-decoration:none;transition:all .3s;border-radius:3px;background:#fff}
+.social-link:hover{border-color:var(--gold);color:#fff;background:linear-gradient(135deg,#C9850A,#E8B830);box-shadow:0 4px 16px rgba(212,165,58,.35);transform:translateY(-2px)}
+.footer-top h5{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:1.5rem;background:linear-gradient(90deg,#7A4E00,#D4A53A,#F4DB97,#D4A53A,#7A4E00);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gold-slide 4s linear infinite;display:inline-block}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.footer-links a{font-size:.84rem;color:var(--text);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.footer-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
+.footer-links a:hover{color:var(--teal);padding-left:.3rem}.footer-links a:hover::before{width:12px}
+.footer-bottom{padding:2rem 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.78rem;color:var(--muted);letter-spacing:.05em}
+.footer-badge{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(1,75,70,.5)}
+.footer-bar{height:3px;background:linear-gradient(to right,var(--teal),#C9850A,#F4DB97,#C9850A,var(--teal))}
+
+@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr;gap:3rem}}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.page-hero{padding:130px 5% 60px}.footer-top{grid-template-columns:1fr;gap:2.5rem}.footer-bottom{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-logo"><img src="../logo.png" alt=""></div>
+  <ul class="mobile-menu-links">
+    <li><a href="../" onclick="closeMenu()">Home</a></li>
+    <li><a href="../services/" onclick="closeMenu()">Services</a></li>
+    <li><a href="../contact/" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-bottom">
+    <a href="../contact/" onclick="closeMenu()">Get Started &rarr;</a>
+    <div class="mobile-menu-tagline">We Answer &bull; We Dispatch &bull; You Grow</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../"><img src="../logo.png" alt="Dispatch Desk"></a>
+    <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../contact/" class="nav-cta-btn">Get Started</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="../">Home</a><span>&rsaquo;</span><span>Privacy Policy</span>
+    </div>
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: June 2026</p>
+  </div>
+</section>
+
+<!-- POLICY CONTENT -->
+<section class="policy-sec">
+  <div class="policy-inner">
+
+    <div class="policy-block">
+      <h2>Who We Are</h2>
+      <p>Dispatch Desk provides professional dispatch management, customer support, digital marketing, and web development services to businesses worldwide. This policy explains how we handle personal data submitted through our website and services.</p>
+      <p>If you have any questions about this policy, contact us at <a href="mailto:info@dispatchdesk.com">info@dispatchdesk.com</a>.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>What We Collect</h2>
+      <p>When you submit the contact form on our website, we collect the following information:</p>
+      <ul>
+        <li>First and last name</li>
+        <li>Email address</li>
+        <li>Phone number (optional)</li>
+        <li>Company or business name (optional)</li>
+        <li>The service you are enquiring about</li>
+        <li>The message or details you provide</li>
+      </ul>
+      <p>We do not collect payment information, sensitive personal data, or any data from third-party sources without your knowledge.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>How We Use Your Data</h2>
+      <p>The information you submit is used solely to:</p>
+      <ul>
+        <li>Respond to your enquiry</li>
+        <li>Prepare a proposal or consultation relevant to your business</li>
+        <li>Follow up if you have not received a response</li>
+      </ul>
+      <p>We do not use your data for automated profiling, unsolicited marketing, or any purpose beyond the scope of your initial contact.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>We Never Share Your Data</h2>
+      <p>Your personal information is not sold, rented, or shared with any third parties. We do not pass your details to advertisers, data brokers, or any external organisations.</p>
+      <div class="policy-note">
+        <p>The only exception is where we are legally required to disclose information, for example in response to a valid court order or regulatory request.</p>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <h2>Data Storage and Security</h2>
+      <p>Your submitted data is stored securely and accessible only to authorised members of the Dispatch Desk team. We take reasonable technical and organisational measures to protect your information from unauthorised access, loss, or disclosure.</p>
+      <p>We retain enquiry data for a maximum of 24 months, after which it is deleted unless an ongoing business relationship requires otherwise.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Cookies</h2>
+      <p>Our website does not currently use tracking cookies or analytics scripts. If this changes, this policy will be updated and visitors will be informed.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request a copy of the data we hold about you</li>
+        <li>Ask us to correct inaccurate information</li>
+        <li>Request deletion of your data at any time</li>
+        <li>Withdraw any consent you have previously given</li>
+      </ul>
+      <p>To exercise any of these rights, email us at <a href="mailto:info@dispatchdesk.com">info@dispatchdesk.com</a> and we will respond within 5 business days.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this policy from time to time. The date at the top of this page reflects when it was last revised. Continued use of our website after any update constitutes acceptance of the revised policy.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo-wrap"><img src="../logo.png" alt="Dispatch Desk" class="footer-logo"></span>
+        <p class="footer-tagline"><span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;font-weight:700;background:linear-gradient(90deg,#7A4E00,#D4A53A,#F4DB97,#D4A53A,#7A4E00);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gold-slide 4s linear infinite;display:block;margin-bottom:.6rem">&ldquo;We Answer. We Dispatch. You Grow.&rdquo;</span>Premium dispatch and customer support trusted by businesses worldwide.</p>
+        <div class="footer-socials"><a href="https://www.linkedin.com/company/126883983" target="_blank" rel="noopener" class="social-link">in</a><a href="https://www.facebook.com/profile.php?id=61590507331587" target="_blank" rel="noopener" class="social-link">fb</a><a href="https://www.instagram.com/ddesk260/" target="_blank" rel="noopener" class="social-link">ig</a></div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="../services/#taxi-booking">Taxi Booking Services</a></li>
+          <li><a href="../services/#customer-support">Customer Support</a></li>
+          <li><a href="../services/#digital-marketing">Digital Marketing</a></li>
+          <li><a href="../services/#web-development">Web Development</a></li>
+          <li><a href="../services/#restaurant-operations">Restaurant Operations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Pages</h5>
+        <ul class="footer-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="../#about">About Us</a></li>
+          <li><a href="../#process">Our Process</a></li>
+          <li><a href="../#why-us">Why Choose Us</a></li>
+          <li><a href="../#testimonials">Client Stories</a></li>
+        </ul>
+        <div style="margin-top:2rem">
+          <h5>Contact</h5>
+          <p style="font-size:.82rem;color:var(--text);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Dispatch Desk. All rights reserved.</span>
+      <span class="footer-badge">We Answer &bull; We Dispatch &bull; You Grow</span>
+    </div>
+  </div>
+  <div class="footer-bar"></div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  },{passive:true});
+  var hamburger=document.getElementById('hamburger');
+  var mobileMenu=document.getElementById('mobileMenu');
+  var menuOpen=false;
+  window.toggleMenu=function(){
+    menuOpen=!menuOpen;
+    hamburger.classList.toggle('open',menuOpen);
+    mobileMenu.classList.toggle('open',menuOpen);
+    document.body.style.overflow=menuOpen?'hidden':'';
+  };
+  window.closeMenu=function(){
+    menuOpen=false;
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow='';
+  };
+})();
+</script>
+</body>
+</html>

@@ -220,25 +220,25 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .btn-outline-w:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-3px)}
 
 /* ========== FOOTER ========== */
-.footer{--dark:#040c0c;--teal:#0d3535;--gold:#c9a84c;background:var(--dark);padding:80px 0 0}
+@keyframes gold-slide{0%{background-position:200% center}100%{background-position:-200% center}}
+.footer{background:var(--cream);border-top:1px solid rgba(1,75,70,.1);padding:80px 0 0}
 .footer-inner{max-width:1220px;margin:0 auto;padding:0 5%}
-.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(1,75,70,.1)}
 .footer-logo-wrap{display:inline-block;margin-bottom:1.5rem}
-.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block;filter:drop-shadow(0 0 1px rgba(255,255,255,.4))}
-.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:rgba(255,255,255,.3);line-height:1.8;max-width:280px;margin-bottom:2rem}
+.footer-logo{height:100px;object-fit:contain;opacity:.95;display:block}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;color:var(--muted);line-height:1.8;max-width:280px;margin-bottom:2rem}
 .footer-socials{display:flex;gap:.7rem}
-.social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .3s;border-radius:2px}
-.social-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
-.footer-top h5{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
+.social-link{width:40px;height:40px;border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.75rem;font-weight:700;text-decoration:none;transition:all .3s;border-radius:3px;background:#fff}
+.social-link:hover{border-color:var(--gold);color:#fff;background:linear-gradient(135deg,#C9850A,#E8B830);box-shadow:0 4px 16px rgba(212,165,58,.35);transform:translateY(-2px)}
+.footer-top h5{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:1.5rem;background:linear-gradient(90deg,#7A4E00,#D4A53A,#F4DB97,#D4A53A,#7A4E00);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gold-slide 4s linear infinite;display:inline-block}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{font-size:.84rem;color:rgba(255,255,255,.38);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.footer-links a{font-size:.84rem;color:var(--text);text-decoration:none;transition:all .3s;display:flex;align-items:center;gap:.5rem}
 .footer-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
-.footer-links a:hover{color:rgba(255,255,255,.75);padding-left:.3rem}
-.footer-links a:hover::before{width:12px}
+.footer-links a:hover{color:var(--teal);padding-left:.3rem}.footer-links a:hover::before{width:12px}
 .footer-bottom{padding:2rem 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.78rem;color:rgba(255,255,255,.2);letter-spacing:.05em}
-.footer-badge{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2)}
-.footer-bar{height:3px;background:linear-gradient(to right,var(--teal),var(--gold),var(--teal))}
+.footer-copy{font-size:.78rem;color:var(--muted);letter-spacing:.05em}
+.footer-badge{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(1,75,70,.5)}
+.footer-bar{height:3px;background:linear-gradient(to right,var(--teal),#C9850A,#F4DB97,#C9850A,var(--teal))}
 
 /* ========== RESPONSIVE ========== */
 @media(max-width:1024px){
@@ -309,13 +309,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <a href="../">Home</a><span>&rsaquo;</span><span>Contact</span>
     </div>
     <div class="hero-tag"><span class="hero-tag-dot"></span>Get In Touch</div>
-    <h1>Let&rsquo;s <span class="gold">Start</span> a<br>Conversation</h1>
-    <p>Have a question, a project, or just want to explore how Dispatch Desk can help your business grow? Our team is ready to listen and respond  usually within 2 hours.</p>
-    <div class="hero-contact-pills">
-      <a href="mailto:info@dispatchdesk.com" class="contact-pill"><span class="contact-pill-icon">&#9993;</span> info@dispatchdesk.com</a>
-      <a href="tel:+441234567890" class="contact-pill"><span class="contact-pill-icon">&#9742;</span> +44 123 456 7890</a>
-      <div class="contact-pill"><span class="contact-pill-icon">&#9200;</span> Available 24 / 7</div>
-    </div>
+    <h1>Tell Us <span class="gold">What</span> You Need</h1>
   </div>
 </section>
 
@@ -355,14 +349,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">&#9679;</div>
-            <div class="contact-item-body">
-              <h4>WhatsApp</h4>
-              <a href="https://wa.me/441234567890">+44 123 456 7890</a>
-              <p style="font-size:.82rem;opacity:.55;margin-top:.2rem">Chat with us instantly</p>
-            </div>
-          </div>
-          <div class="contact-item">
             <div class="contact-item-icon">&#9873;</div>
             <div class="contact-item-body">
               <h4>Office Address</h4>
@@ -375,14 +361,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <div class="hours-grid">
             <div class="hours-cell"><h5>Monday – Friday</h5><p>Available 24/7</p></div>
             <div class="hours-cell"><h5>Saturday – Sunday</h5><p>Available 24/7</p></div>
-            <div class="hours-cell" style="grid-column:1/-1"><h5>Response Time</h5><p>Within 2 hours guaranteed</p></div>
+            <div class="hours-cell" style="grid-column:1/-1"><h5>&lt;30s</h5><p>Response Time</p></div>
           </div>
         </div>
-        <div class="social-row">
-          <a href="#" class="social-btn">in</a>
-          <a href="#" class="social-btn">tw</a>
-          <a href="#" class="social-btn">fb</a>
-          <a href="#" class="social-btn">ig</a>
+        <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap">
+          <a href="https://www.linkedin.com/company/126883983" target="_blank" rel="noopener" style="font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s" onmouseover="this.style.color='#E6C36A'" onmouseout="this.style.color='rgba(255,255,255,.5)'">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590507331587" target="_blank" rel="noopener" style="font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s" onmouseover="this.style.color='#E6C36A'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Facebook</a>
+          <a href="https://www.instagram.com/ddesk260/" target="_blank" rel="noopener" style="font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s" onmouseover="this.style.color='#E6C36A'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Instagram</a>
         </div>
       </div>
 
@@ -391,7 +376,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         <div class="form-header">
           <span class="tag">Send a Message</span>
           <h3>Tell Us About<br>Your Business</h3>
-          <p>Complete the form and we&rsquo;ll prepare a tailored response for your specific needs.</p>
+          <p>Complete the form and we&rsquo;ll prepare a response specific to your business needs.</p>
         </div>
         <form id="contactForm" novalidate>
           <div class="form-grid">
@@ -431,7 +416,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
             <div class="form-group full">
               <label for="message">Your Message <span style="color:var(--gold)">*</span></label>
               <textarea id="message" name="message" placeholder="Tell us about your business, your current challenges, and how we can help you grow&hellip;" required></textarea>
-              <span class="form-note">Minimum 20 characters. The more detail, the better we can tailor our response.</span>
+              <span class="form-note">Minimum 20 characters. The more detail you provide, the better we can help.</span>
             </div>
           </div>
           <div class="form-submit-row">
@@ -439,7 +424,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
               <span>Send Your Message</span>
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
-            <p class="form-privacy">By submitting you agree to our <a href="#">Privacy Policy</a>. We never share your data.</p>
+            <p class="form-privacy">By submitting you agree to our <a href="../privacy/">Privacy Policy</a>. We never share your data.</p>
           </div>
         </form>
         <div class="form-success" id="formSuccess">
@@ -496,15 +481,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       </div>
       <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
         <div class="faq-q"><h4>Which dispatch platforms do you support?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a"><p>We are certified across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and Data Master  the six leading platforms in the industry. If you use a different system, contact us to discuss.</p></div>
+        <div class="faq-a"><p>We are certified across Autocab, iCabbi, Cab 9, Cordic, Cab Treasure and Data Master, the six leading platforms in the industry. If you use a different system, contact us to discuss.</p></div>
       </div>
       <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
         <div class="faq-q"><h4>Can I use multiple services together?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a"><p>Yes  and many of our clients do. We offer bundled packages for businesses that need dispatch management alongside customer support, digital marketing or web development.</p></div>
+        <div class="faq-a"><p>Yes, and many of our clients do. We offer bundled packages for businesses that need dispatch management alongside customer support, digital marketing or web development.</p></div>
       </div>
       <div class="faq-item" data-reveal="up" onclick="toggleFaq(this)">
         <div class="faq-q"><h4>How is pricing structured?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a"><p>Pricing is tailored to your volume and requirements. We don&rsquo;t believe in one-size-fits-all pricing. Contact us and we&rsquo;ll prepare a custom proposal within 24 hours.</p></div>
+        <div class="faq-a"><p>Pricing is based on your volume and requirements. We don&rsquo;t believe in one-size-fits-all pricing. Contact us and we&rsquo;ll prepare a custom proposal within 24 hours.</p></div>
       </div>
     </div>
   </div>
@@ -534,13 +519,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
     <div class="footer-top">
       <div data-reveal="up">
         <span class="footer-logo-wrap"><img src="../logo.png" alt="Dispatch Desk" class="footer-logo"></span>
-        <p class="footer-tagline">&ldquo;We Answer. We Dispatch. You Grow.&rdquo; Premium dispatch and customer support trusted by businesses worldwide.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-link">in</a>
-          <a href="#" class="social-link">tw</a>
-          <a href="#" class="social-link">fb</a>
-          <a href="#" class="social-link">ig</a>
-        </div>
+        <p class="footer-tagline"><span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;font-weight:700;background:linear-gradient(90deg,#7A4E00,#D4A53A,#F4DB97,#D4A53A,#7A4E00);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gold-slide 4s linear infinite;display:block;margin-bottom:.6rem">&ldquo;We Answer. We Dispatch. You Grow.&rdquo;</span>Premium dispatch and customer support trusted by businesses worldwide.</p>
+        <div class="footer-socials"><a href="https://www.linkedin.com/company/126883983" target="_blank" rel="noopener" class="social-link">in</a><a href="https://www.facebook.com/profile.php?id=61590507331587" target="_blank" rel="noopener" class="social-link">fb</a><a href="https://www.instagram.com/ddesk260/" target="_blank" rel="noopener" class="social-link">ig</a></div>
       </div>
       <div data-reveal="up">
         <h5>Services</h5>
@@ -570,12 +550,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </ul>
         <div style="margin-top:2rem">
           <h5>Contact</h5>
-          <p style="font-size:.82rem;color:rgba(255,255,255,.3);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p>
+          <p style="font-size:.82rem;color:var(--text);line-height:2;margin-top:.8rem">info@dispatchdesk.com<br>+44 123 456 7890<br>Available 24/7</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2025 Dispatch Desk. All rights reserved.</span>
+      <span class="footer-copy">&copy; 2026 Dispatch Desk. All rights reserved.</span>
       <span class="footer-badge">We Answer &bull; We Dispatch &bull; You Grow</span>
     </div>
   </div>
